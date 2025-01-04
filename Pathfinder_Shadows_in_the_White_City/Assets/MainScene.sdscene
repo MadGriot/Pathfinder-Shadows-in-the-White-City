@@ -1,0 +1,177 @@
+!SceneAsset
+Id: 59738f69-eb6a-4b82-8adf-a38527fa43da
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+ChildrenIds: []
+Offset: {X: 0.0, Y: 0.0, Z: 0.0}
+Hierarchy:
+    RootParts:
+        - ref!! ebbab640-a6a0-4001-bae1-f19a87c02bfd
+        - ref!! 6aa90d40-408e-475c-bd43-a6ada7d7350a
+        - ref!! 98627184-1d91-472b-8da5-7c9c817eb31b
+        - ref!! 76e8bf43-276e-40d7-8322-c6c5f42a5f7d
+        - ref!! 5ab694c0-f179-4641-8309-74c26d516ad5
+        - ref!! 789ef49c-f31f-4668-b31f-853901d7a16b
+        - ref!! a40292b9-c390-42a0-841a-a289d02e110b
+        - ref!! a0e4bf2d-b6ed-4d85-91c6-672cc5ef125a
+    Parts:
+        -   Entity:
+                Id: 5ab694c0-f179-4641-8309-74c26d516ad5
+                Name: Wall
+                Components:
+                    ec5e09973f2e621b60176e1a60b1ed09: !TransformComponent
+                        Id: b9ed8208-ad64-4d9c-af98-63e9500609bc
+                        Position: {X: 0.0, Y: 1.0, Z: -10.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 10.0, Y: 2.0, Z: 0.1}
+                        Children: {}
+                    712ac321a89d7c42874fe52e7d1d564e: !ModelComponent
+                        Id: e35a6afa-2835-4090-b808-1b795f2f85c2
+                        Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
+                        Materials:
+                            200b4c0c4fc2b3b4cc1bfb03b027c906~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Entity:
+                Id: 6aa90d40-408e-475c-bd43-a6ada7d7350a
+                Name: Directional light
+                Components:
+                    01e2f3a135d231b67abd037cfdd7d81d: !TransformComponent
+                        Id: 9d957680-c4e6-4f5b-af58-992baee3f242
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    7b4d8dbd675eca069632aa0ed96c7b29: !LightComponent
+                        Id: f930173a-86b4-4501-8236-90f9cb5b752c
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow:
+                                Enabled: true
+                                Filter: !LightShadowMapFilterTypePcf
+                                    FilterSize: Filter5x5
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
+                        Intensity: 10.0
+        -   Entity:
+                Id: 76e8bf43-276e-40d7-8322-c6c5f42a5f7d
+                Name: Ground
+                Components:
+                    5130c1159a84894b566209a82fa970c7: !TransformComponent
+                        Id: 55ca3245-e090-460e-aeb6-91f360015f57
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 2.0, Y: 1.0, Z: 2.0}
+                        Children: {}
+                    8ecac4254f1d2f0373c40538fc0250cd: !ModelComponent
+                        Id: 92afb705-ed17-403b-a250-06373dfcfd47
+                        Model: 2e05e8c0-c326-4e57-a3c2-401eb1717e37:Ground
+                        Materials:
+                            5830d01660a6dce34d38212b366efb5f~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+                    c8384817c9787743e73b2cfc9db493b1: !StaticColliderComponent
+                        Id: 60879873-949d-4353-8eb8-0bbee5cc3405
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            dd4f90982960db56f2a3f542c9e5afc9: !StaticPlaneColliderShapeDesc
+                                Normal: {X: 0.0, Y: 1.0, Z: 0.0}
+                                Offset: 0.0
+        -   Folder: null
+            Entity:
+                Id: 789ef49c-f31f-4668-b31f-853901d7a16b
+                Name: Wall
+                Components:
+                    ec5e09973f2e621b60176e1a60b1ed09: !TransformComponent
+                        Id: 810e6f73-3b00-4d92-9b4b-0c45a4f07138
+                        Position: {X: 0.0, Y: 1.0, Z: 10.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 10.0, Y: 2.0, Z: 0.1}
+                        Children: {}
+                    712ac321a89d7c42874fe52e7d1d564e: !ModelComponent
+                        Id: 61b4807e-c33e-47aa-bf7f-55371b24d4ab
+                        Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
+                        Materials:
+                            4dd2fb3c950d6e49721108c933465ebe~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Entity:
+                Id: 98627184-1d91-472b-8da5-7c9c817eb31b
+                Name: Skybox
+                Components:
+                    01a4ae6612a4b41605ef019a68006cab: !TransformComponent
+                        Id: 2bd0d968-9bfd-4650-af6e-11ccdc7859ee
+                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1e5a67b65d46b0480fb4269fd36687e8: !BackgroundComponent
+                        Id: 8951c90d-d1cb-4874-9750-56beb16d9199
+                        Texture: d460bcb7-13cc-46d7-96c6-b55214639026:Skybox texture
+                        Intensity: 0.5
+                    e2895da16bbf75143c008e0b33efdf0d: !LightComponent
+                        Id: 952545f6-f812-45fc-983c-8c575170d991
+                        Type: !LightSkybox
+                            Skybox: afdd0afc-f3c9-43ca-a397-30e40d122d9d:Skybox
+                        Intensity: 0.5
+        -   Folder: null
+            Entity:
+                Id: a0e4bf2d-b6ed-4d85-91c6-672cc5ef125a
+                Name: Wall
+                Components:
+                    ec5e09973f2e621b60176e1a60b1ed09: !TransformComponent
+                        Id: f7ec12d2-6d3d-47bd-9c71-6b86d9b9e634
+                        Position: {X: -10.0, Y: 1.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.70710677, Z: 0.0, W: 0.70710677}
+                        Scale: {X: 10.0, Y: 2.0, Z: 0.1}
+                        Children: {}
+                    712ac321a89d7c42874fe52e7d1d564e: !ModelComponent
+                        Id: bfa21feb-d79e-469e-abc6-0031fcece5f8
+                        Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
+                        Materials:
+                            3de03cb4d7b4318bfc5bdef94bd0442c~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Folder: null
+            Entity:
+                Id: a40292b9-c390-42a0-841a-a289d02e110b
+                Name: Wall
+                Components:
+                    ec5e09973f2e621b60176e1a60b1ed09: !TransformComponent
+                        Id: da192b60-a684-456b-af21-f1a4b12ab69f
+                        Position: {X: 10.0, Y: 1.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.70710677, Z: 0.0, W: 0.70710677}
+                        Scale: {X: 10.0, Y: 2.0, Z: 0.1}
+                        Children: {}
+                    712ac321a89d7c42874fe52e7d1d564e: !ModelComponent
+                        Id: 66fa7f19-a9fe-4c15-9a41-7ee7b02ced93
+                        Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
+                        Materials:
+                            03267ef2d0ec39e43981fff9d0b74d53~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Entity:
+                Id: ebbab640-a6a0-4001-bae1-f19a87c02bfd
+                Name: Camera
+                Components:
+                    2a5273e362b1204b83c4325cee315707: !TransformComponent
+                        Id: 462bc739-0d42-400d-9b23-d9291f5ef323
+                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
+                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    abf2d5166f2202a38e7c8a0934ae58f7: !CameraComponent
+                        Id: fb5689d5-2c34-45b4-9184-eeaa62d0fcf3
+                        Name: null
+                        Projection: Perspective
+                        Slot: 468f06fb-c652-40cc-8bf4-8ea47b2bc00e
+                    69a3124e32ecbac42a365003fe885eac: !Pathfinder_Shadows_in_the_White_City.BasicCameraController,Pathfinder_Shadows_in_the_White_City
+                        Id: 6a900451-dfee-4487-82e5-af18bf571d05
+                        Gamepad: false
+                        KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
+                        TouchMovementSpeed: {X: 0.7, Y: 0.7, Z: 0.3}
+                        SpeedFactor: 5.0
+                        KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
+                        MouseRotationSpeed: {X: 1.0, Y: 1.0}
+                        TouchRotationSpeed: {X: 1.0, Y: 0.7}

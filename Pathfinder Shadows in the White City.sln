@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathfinder_Shadows_in_the_White_City.Windows", "Pathfinder_Shadows_in_the_White_City.Windows\Pathfinder_Shadows_in_the_White_City.Windows.csproj", "{2260C569-644E-44AE-81F0-E77D7688B7FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathfinder_Shadows_in_the_White_City", "Pathfinder_Shadows_in_the_White_City\Pathfinder_Shadows_in_the_White_City.csproj", "{DF4E8809-DD73-47A1-9FE8-4D7CAB7F0B68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2260C569-644E-44AE-81F0-E77D7688B7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2260C569-644E-44AE-81F0-E77D7688B7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2260C569-644E-44AE-81F0-E77D7688B7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2260C569-644E-44AE-81F0-E77D7688B7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4E8809-DD73-47A1-9FE8-4D7CAB7F0B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4E8809-DD73-47A1-9FE8-4D7CAB7F0B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4E8809-DD73-47A1-9FE8-4D7CAB7F0B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4E8809-DD73-47A1-9FE8-4D7CAB7F0B68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
