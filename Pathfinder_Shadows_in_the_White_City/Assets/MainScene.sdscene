@@ -14,6 +14,8 @@ Hierarchy:
         - ref!! 789ef49c-f31f-4668-b31f-853901d7a16b
         - ref!! a40292b9-c390-42a0-841a-a289d02e110b
         - ref!! a0e4bf2d-b6ed-4d85-91c6-672cc5ef125a
+        - ref!! d63dace9-eaed-4025-993f-65c2df6ba289
+        - ref!! 5d2f0c21-4943-4e4b-ac5b-988009477fde
     Parts:
         -   Entity:
                 Id: 5ab694c0-f179-4641-8309-74c26d516ad5
@@ -30,6 +32,18 @@ Hierarchy:
                         Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
                         Materials:
                             200b4c0c4fc2b3b4cc1bfb03b027c906~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Entity:
+                Id: 5d2f0c21-4943-4e4b-ac5b-988009477fde
+                Name: Tester
+                Components:
+                    bc9d83c4dff0f7964676f70b80e24a77: !TransformComponent
+                        Id: 8bd4cab3-01e9-4e78-b78c-ffc11318efa3
+                        Position: {X: 0.0, Y: -8.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a7d037091204ed2119b2248a771814f0: !Pathfinder_Shadows_in_the_White_City.SandboxScript,Pathfinder_Shadows_in_the_White_City
+                        Id: 7b537c35-88e4-4aee-a04e-da4271dfeb0d
         -   Entity:
                 Id: 6aa90d40-408e-475c-bd43-a6ada7d7350a
                 Name: Directional light
@@ -151,6 +165,16 @@ Hierarchy:
                         Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
                         Materials:
                             03267ef2d0ec39e43981fff9d0b74d53~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Entity:
+                Id: d63dace9-eaed-4025-993f-65c2df6ba289
+                Name: Grid
+                Components:
+                    4a3836d2290ae7c48c84983def6f97f4: !TransformComponent
+                        Id: bd4416b7-d119-4f72-ae29-527aea2c44fb
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
         -   Entity:
                 Id: ebbab640-a6a0-4001-bae1-f19a87c02bfd
                 Name: Camera
