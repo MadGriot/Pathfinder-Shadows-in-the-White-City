@@ -9,14 +9,88 @@ Hierarchy:
         - ref!! ebbab640-a6a0-4001-bae1-f19a87c02bfd
         - ref!! 6aa90d40-408e-475c-bd43-a6ada7d7350a
         - ref!! 98627184-1d91-472b-8da5-7c9c817eb31b
-        - ref!! 76e8bf43-276e-40d7-8322-c6c5f42a5f7d
-        - ref!! 5ab694c0-f179-4641-8309-74c26d516ad5
-        - ref!! 789ef49c-f31f-4668-b31f-853901d7a16b
-        - ref!! a40292b9-c390-42a0-841a-a289d02e110b
-        - ref!! a0e4bf2d-b6ed-4d85-91c6-672cc5ef125a
         - ref!! d63dace9-eaed-4025-993f-65c2df6ba289
         - ref!! 5d2f0c21-4943-4e4b-ac5b-988009477fde
+        - ref!! 3d5ec4ed-9d0e-40a2-8d09-ebcc4f2d1bc3
+        - ref!! 22b4560a-2273-4ade-bcbe-c62c42e7dcc7
+        - ref!! d3e11360-3a8e-4107-87f5-36ac79a2d25c
+        - ref!! 4fd13266-e23b-47d8-9044-5e5656d5c20d
+        - ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
+        - ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
     Parts:
+        -   Entity:
+                Id: 22b4560a-2273-4ade-bcbe-c62c42e7dcc7
+                Name: TrainingArea
+                Components:
+                    855821b1bc63a5209af894f23e8bf998: !TransformComponent
+                        Id: e2443771-9126-449d-8a96-7ae3798e5dbc
+                        Position: {X: 9.0, Y: 0.0, Z: 9.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            ba3bbba46302b86eab8b38084e72d8c3: ref!! 55ca3245-e090-460e-aeb6-91f360015f57
+                            048341f967e48bdcfbb953183569c420: ref!! b9ed8208-ad64-4d9c-af98-63e9500609bc
+                            13c138c88494d098837b90685bece444: ref!! 810e6f73-3b00-4d92-9b4b-0c45a4f07138
+                            433e794a5628b87823eee828ebc10a21: ref!! da192b60-a684-456b-af21-f1a4b12ab69f
+                            abbe91d48954ec9d98362bdcfbdc076b: ref!! f7ec12d2-6d3d-47bd-9c71-6b86d9b9e634
+        -   Entity:
+                Id: 3d5ec4ed-9d0e-40a2-8d09-ebcc4f2d1bc3
+                Name: CoinWhite
+                Components:
+                    183a72cc1ad551b29192a3fb575d48e9: !TransformComponent
+                        Id: e362b04d-794b-4ae1-a22d-ce9a0f5c6f01
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    8ab70d1ab63d2432b3c146bab2ee394e: !ModelComponent
+                        Id: 254ad1b0-6dfb-4b9f-8132-88ad94d16ab1
+                        Model: 13da101d-c7fd-4f9e-b266-12214e98b281:Models/CoinWhite
+                        Materials: {}
+        -   Entity:
+                Id: 4fd13266-e23b-47d8-9044-5e5656d5c20d
+                Name*: Actor2
+                Components:
+                    eb6519567d056857b6e24f5ae89e1086: !TransformComponent
+                        Id: e2fa5223-905c-4158-a1df-4c661b66ba70
+                        Position*: {X: 4.0, Y: 0.0, Z: 2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c8630be590aac2cae521ee33c39f4f25: !ModelComponent
+                        Id: 2ad4b8cc-b986-473d-b1a2-fa862c3be188
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials: {}
+                    381cf100afeb0e94ab7289485219bc8d: !CharacterComponent
+                        Id: 9fb49bf5-9e98-4430-aa83-77b26a3f383b
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            20097bd3a56966742ccb34662728f3c6: !CapsuleColliderShapeDesc
+                                Length: 1.3
+                                LocalOffset: {X: 0.0, Y: 0.85, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
+                        Id: fc004b4d-02d2-4873-914c-94fb07e31942
+                        IsFriendly: true
+                        actor: ref!! 4fd13266-e23b-47d8-9044-5e5656d5c20d
+                    205432e8c436c84d050264d01555f0c3: !AnimationComponent
+                        Id: 72e246b7-3e9f-4c3e-a6ac-1a51b54c34be
+                        Animations:
+                            ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+            Base:
+                BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
+                BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
+                InstanceId: e99b3a1d-d21b-4fd0-bda5-c4df073b3c35
         -   Entity:
                 Id: 5ab694c0-f179-4641-8309-74c26d516ad5
                 Name: Wall
@@ -44,6 +118,11 @@ Hierarchy:
                         Children: {}
                     a7d037091204ed2119b2248a771814f0: !Pathfinder_Shadows_in_the_White_City.SandboxScript,Pathfinder_Shadows_in_the_White_City
                         Id: 7b537c35-88e4-4aee-a04e-da4271dfeb0d
+                        Material: null
+                        DebugObject: ref!! 3d5ec4ed-9d0e-40a2-8d09-ebcc4f2d1bc3
+                    bc5a736ea6e896d38606fed79d5f379d: !Pathfinder_Shadows_in_the_White_City.Grid.Grid,Pathfinder_Shadows_in_the_White_City
+                        Id: 4a5bbb62-a2d5-4bb4-8870-c98a4a0b218d
+                        Cell: ref!! d63dace9-eaed-4025-993f-65c2df6ba289
         -   Entity:
                 Id: 6aa90d40-408e-475c-bd43-a6ada7d7350a
                 Name: Directional light
@@ -98,8 +177,7 @@ Hierarchy:
                             dd4f90982960db56f2a3f542c9e5afc9: !StaticPlaneColliderShapeDesc
                                 Normal: {X: 0.0, Y: 1.0, Z: 0.0}
                                 Offset: 0.0
-        -   Folder: null
-            Entity:
+        -   Entity:
                 Id: 789ef49c-f31f-4668-b31f-853901d7a16b
                 Name: Wall
                 Components:
@@ -133,8 +211,7 @@ Hierarchy:
                         Type: !LightSkybox
                             Skybox: afdd0afc-f3c9-43ca-a397-30e40d122d9d:Skybox
                         Intensity: 0.5
-        -   Folder: null
-            Entity:
+        -   Entity:
                 Id: a0e4bf2d-b6ed-4d85-91c6-672cc5ef125a
                 Name: Wall
                 Components:
@@ -149,8 +226,7 @@ Hierarchy:
                         Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
                         Materials:
                             3de03cb4d7b4318bfc5bdef94bd0442c~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
-        -   Folder: null
-            Entity:
+        -   Entity:
                 Id: a40292b9-c390-42a0-841a-a289d02e110b
                 Name: Wall
                 Components:
@@ -166,23 +242,116 @@ Hierarchy:
                         Materials:
                             03267ef2d0ec39e43981fff9d0b74d53~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
         -   Entity:
-                Id: d63dace9-eaed-4025-993f-65c2df6ba289
-                Name: Grid
+                Id: a639d7f9-da62-46dd-bcbb-eeefdd324e24
+                Name*: EnemyActor2
                 Components:
-                    4a3836d2290ae7c48c84983def6f97f4: !TransformComponent
-                        Id: bd4416b7-d119-4f72-ae29-527aea2c44fb
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                    eb6519567d056857b6e24f5ae89e1086: !TransformComponent
+                        Id: 15c64425-bf6c-44a0-89b6-e7d046bc4a5f
+                        Position*: {X: 18.0, Y: 0.0, Z: 16.0}
+                        Rotation*: {X: 0.0, Y: 1.0, Z: 0.0, W: -4.371139E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c8630be590aac2cae521ee33c39f4f25: !ModelComponent
+                        Id: e09ccd31-6ef3-43d1-91bb-ee6dad308add
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials:
+                            f94a3b364351579c1b1589f6e07d9a48*~0: ea4fff51-27a0-499f-bedd-5c7842939559:MaterialTestB
+                    381cf100afeb0e94ab7289485219bc8d: !CharacterComponent
+                        Id: 5a537131-8328-4d47-bba2-011e71e795c5
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            20097bd3a56966742ccb34662728f3c6: !CapsuleColliderShapeDesc
+                                Length: 1.3
+                                LocalOffset: {X: 0.0, Y: 0.85, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
+                        Id: 38173480-e3ef-4ef8-9e0f-1f7526f355f7
+                        IsFriendly*: false
+                        actor: ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
+                    205432e8c436c84d050264d01555f0c3: !AnimationComponent
+                        Id: 25c7701a-fd1f-44e6-ae40-a2868df5d5d0
+                        Animations:
+                            ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+            Base:
+                BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
+                BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
+                InstanceId: 68c01ab6-c482-4fd6-bfdd-a08d0507b835
+        -   Entity:
+                Id: d3e11360-3a8e-4107-87f5-36ac79a2d25c
+                Name: Actor
+                Components:
+                    eb6519567d056857b6e24f5ae89e1086: !TransformComponent
+                        Id: 3468ad60-42bc-4df0-8e10-e388d739abd0
+                        Position*: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
+                    c8630be590aac2cae521ee33c39f4f25: !ModelComponent
+                        Id: b0a6c108-9ae8-4416-be71-9881eac0b637
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials: {}
+                    381cf100afeb0e94ab7289485219bc8d: !CharacterComponent
+                        Id: e8e079fe-9082-4b6c-8002-44e4711e22cf
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            20097bd3a56966742ccb34662728f3c6: !CapsuleColliderShapeDesc
+                                Length: 1.3
+                                LocalOffset: {X: 0.0, Y: 0.85, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
+                        Id: 31aaed56-a8b2-48e7-be13-8874568ab7c3
+                        IsFriendly: true
+                        actor: ref!! d3e11360-3a8e-4107-87f5-36ac79a2d25c
+                    205432e8c436c84d050264d01555f0c3: !AnimationComponent
+                        Id: f415718e-b829-441e-9f24-d911c0817de8
+                        Animations:
+                            ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+            Base:
+                BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
+                BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
+                InstanceId: 3d1c57c5-2f42-4b4b-8842-115aee442a56
+        -   Entity:
+                Id: d63dace9-eaed-4025-993f-65c2df6ba289
+                Name: GridCell
+                Components:
+                    4a3836d2290ae7c48c84983def6f97f4: !TransformComponent
+                        Id: bd4416b7-d119-4f72-ae29-527aea2c44fb
+                        Position: {X: 0.0, Y: -0.95967513, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 2.0, Y: 1.0, Z: 2.0}
+                        Children: {}
+                    1a2a45af296d5fd43247def20a67ef61: !ModelComponent
+                        Id: 6c69ecdf-0be6-4f8f-a11f-4dbd18d0124b
+                        Model: 1949576b-051c-4940-bf8d-3ac2f024e8b4:Models/GridCell
+                        Materials: {}
         -   Entity:
                 Id: ebbab640-a6a0-4001-bae1-f19a87c02bfd
                 Name: Camera
                 Components:
                     2a5273e362b1204b83c4325cee315707: !TransformComponent
                         Id: 462bc739-0d42-400d-9b23-d9291f5ef323
-                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
-                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Position: {X: -0.06874949, Y: 4.2117896, Z: -1.0}
+                        Rotation: {X: 0.0, Y: -0.9279651, Z: 0.0, W: 0.37266693}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     abf2d5166f2202a38e7c8a0934ae58f7: !CameraComponent
@@ -199,3 +368,48 @@ Hierarchy:
                         KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
                         MouseRotationSpeed: {X: 1.0, Y: 1.0}
                         TouchRotationSpeed: {X: 1.0, Y: 0.7}
+        -   Entity:
+                Id: fdfa385c-9cb1-47e0-ae21-379c83d5af3e
+                Name*: EnemyActor
+                Components:
+                    eb6519567d056857b6e24f5ae89e1086: !TransformComponent
+                        Id: 66e9eade-1020-4655-8d6c-9fb2ab58a2d6
+                        Position*: {X: 18.0, Y: 0.0, Z: 18.0}
+                        Rotation*: {X: 0.0, Y: 1.0, Z: 0.0, W: -4.371139E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c8630be590aac2cae521ee33c39f4f25: !ModelComponent
+                        Id: c7940e36-6cab-4481-8c7f-e37317ea764d
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials:
+                            a896236856c2a45ee5fa2904d7c8c43c*~0: ea4fff51-27a0-499f-bedd-5c7842939559:MaterialTestB
+                    381cf100afeb0e94ab7289485219bc8d: !CharacterComponent
+                        Id: 34a771e7-67a3-4285-a609-878c4723ffae
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            20097bd3a56966742ccb34662728f3c6: !CapsuleColliderShapeDesc
+                                Length: 1.3
+                                LocalOffset: {X: 0.0, Y: 0.85, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
+                        Id: 923b6c67-8d89-4f2c-b308-eb46961fbb71
+                        IsFriendly*: false
+                        actor: ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
+                    205432e8c436c84d050264d01555f0c3: !AnimationComponent
+                        Id: 220abad3-6ee4-46e7-a33a-ba0ff2184b54
+                        Animations:
+                            ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+            Base:
+                BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
+                BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
+                InstanceId: 6b571041-a67c-447b-8a99-068c9376b2e2

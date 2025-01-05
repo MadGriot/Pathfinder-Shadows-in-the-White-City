@@ -1,19 +1,22 @@
 ﻿using System.Collections.Generic;
 using Pathfinder_Shadows_in_the_White_City.Character;
+using Stride.Engine;
 
 namespace Pathfinder_Shadows_in_the_White_City.Grid
 {
     public class GridObject
     {
-        private GridPosition GridPosition;
+        public GridPosition GridPosition { get; private set; }
 
         public List<Actor> Actors { get; set; }
+        public Entity Cell { get; set; }
 
 
-        public GridObject(GridPosition gridPosition)
+        public GridObject(GridPosition gridPosition, Entity cell)
         {
             GridPosition = gridPosition;
             Actors = new List<Actor>();
+            Cell = cell;
         }
 
         public override string ToString()
