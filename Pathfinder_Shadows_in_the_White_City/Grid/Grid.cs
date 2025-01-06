@@ -1,6 +1,5 @@
 ﻿using Stride.Engine;
 using Stride.Engine.Events;
-using System.Linq;
 
 namespace Pathfinder_Shadows_in_the_White_City.Grid
 {
@@ -23,12 +22,14 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             if (BattleStartListner.TryReceive())
             {
                 LoadAllGridPositionVisuals();
+
             }
             if (BattleEndListner.TryReceive())
             {
                 RemoveAllGridPositionVisuals();
                 LevelGrid.EnemyActorList.Clear();
                 LevelGrid.FriendlyActorList.Clear();
+                LevelGrid.AllActorsInBattle.Clear();
             }
 
         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace PathfinderSecondEdition
 {
     public class AbilityScore
@@ -16,6 +11,6 @@ namespace PathfinderSecondEdition
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
         public int CharacterSheetModelId { get; set; }
-        public required CharacterSheetModel CharacterSheetModel { get; set; }
+        public CharacterSheetModel CharacterSheetModel { get; set; }
     }
 }

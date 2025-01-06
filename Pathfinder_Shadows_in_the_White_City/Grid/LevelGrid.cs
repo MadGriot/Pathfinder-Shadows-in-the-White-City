@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Stride.Engine;
 using Stride.Engine.Events;
 using Pathfinder_Shadows_in_the_White_City.Character;
+using System.Linq;
 
 namespace Pathfinder_Shadows_in_the_White_City.Grid
 {
@@ -18,6 +17,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         /// This Dictionary has the Actor as the Key, and initative as the value.
         /// </summary>
         public static Dictionary<Actor, int> AllActorsInBattle { get; private set; } = new Dictionary<Actor, int>();
+        public static Queue<Actor> TurnOrder {  get; set; }
 
         /// <summary>
         /// Creates a grid given the parameters; 'x' is width 'z' is length.
@@ -31,6 +31,15 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             FriendlyActorList = new List<Actor>();
             EnemyActorList = new List<Actor>();
         }
-
+        /// <summary>
+        /// Determines the Turn Order by Initiative. All actors will be in a Queue.
+        /// </summary>
+        public static void DetermineTurnOrder()
+        {
+            List<Actor> characters = AllActorsInBattle
+               .OrderByDescending(x => x.Value)
+               .Select(x => x.Key).ToList();
+            TurnOrder = new Queue<Actor>(characters);
+        }
     }
 }

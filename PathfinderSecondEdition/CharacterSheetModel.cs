@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace PathfinderSecondEdition
 {
     public class CharacterSheetModel
@@ -15,6 +10,6 @@ namespace PathfinderSecondEdition
         public int CurrentHP { get; set; }
         public int MaxHP { get; set; }
 
-        public required AbilityScore AbilityScore { get; set; }
+        public AbilityScore AbilityScore { get; set; }
     }
 }

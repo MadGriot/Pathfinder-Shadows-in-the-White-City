@@ -3,6 +3,7 @@ using Stride.Engine;
 using Pathfinder_Shadows_in_the_White_City.Grid;
 using Stride.Animations;
 using Stride.Engine.Events;
+using PathfinderSecondEdition.Mechanics;
 
 
 namespace Pathfinder_Shadows_in_the_White_City.Character
@@ -16,6 +17,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         private PlayingAnimation CurrentAnimation;
         private EventReceiver BattleStartListner;
         private EventReceiver BattleEndListner;
+        internal CharacterSheet CharacterSheet;
+        internal int initiative;
 
         public Entity actor { get; set; }
         public GridPosition GridPosition { get; private set; }
@@ -26,7 +29,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
             BattleEndListner = new EventReceiver(LevelGrid.BattleEnd);
             AnimationComponent = Entity.Get<AnimationComponent>();
             CurrentAnimation = AnimationComponent.Play("Idle");
-            
+            CharacterSheet = new CharacterSheet(CharacterSheetId);
         }
 
         public override void Update()
@@ -37,6 +40,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
                     LevelGrid.EnemyActorList.Add(this);
                 else
                     LevelGrid.FriendlyActorList.Add(this);
+                initiative = Check.Perception(CharacterSheet.WisdomModifier, 0, 0);
+                LevelGrid.AllActorsInBattle.Add(this, initiative);
                 DebugText.Print("Battle Has Started", new Int2(200, 400));
             }
 
