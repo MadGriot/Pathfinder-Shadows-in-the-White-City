@@ -27,8 +27,4 @@
 
     <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.2.0.2267" IncludeAssets="build;buildTransitive" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\source\repos\Sandbox\Pathfinder2E\Pathfinder2E.csproj" />
-  </ItemGroup>
 </Project>
