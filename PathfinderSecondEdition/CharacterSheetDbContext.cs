@@ -6,6 +6,7 @@ namespace PathfinderSecondEdition;
 public class CharacterSheetDbContext : DbContext
 {
     public DbSet<CharacterSheetModel> CharacterSheetModels { get; set; }
+    public DbSet<AbilityScore> AbilityScores { get; set; }
     public string DbPath { get; private set; }
 
     public CharacterSheetDbContext()

@@ -14,5 +14,7 @@ namespace PathfinderSecondEdition
         public required string LastName { get; set; }
         public int CurrentHP { get; set; }
         public int MaxHP { get; set; }
+
+        public required AbilityScore AbilityScore { get; set; }
     }
 }
