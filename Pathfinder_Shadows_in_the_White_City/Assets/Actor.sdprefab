@@ -40,6 +40,7 @@ Hierarchy:
                     a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
                         Id: 998f8641-7ba9-41fd-8508-5898da1f9e3e
                         IsFriendly: true
+                        CharacterSheetId: 0
                         actor: ref!! fca0d709-3035-42b4-ac21-5b50e3013e9e
                     205432e8c436c84d050264d01555f0c3: !AnimationComponent
                         Id: 72861549-5722-4720-9da7-06d51d9e9eb0

@@ -14,6 +14,10 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         public static EventKey BattleEnd { get; private set; } = new EventKey("Battle", "End");
         public static List<Actor> FriendlyActorList { get; private set; }
         public static List<Actor> EnemyActorList { get; private set; }
+        /// <summary>
+        /// This Dictionary has the Actor as the Key, and initative as the value.
+        /// </summary>
+        public static Dictionary<Actor, int> AllActorsInBattle { get; private set; } = new Dictionary<Actor, int>();
 
         /// <summary>
         /// Creates a grid given the parameters; 'x' is width 'z' is length.

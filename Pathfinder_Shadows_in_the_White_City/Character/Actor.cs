@@ -3,6 +3,8 @@ using Stride.Engine;
 using Pathfinder_Shadows_in_the_White_City.Grid;
 using Stride.Animations;
 using Stride.Engine.Events;
+using Pathfinder2E;
+using Pathfinder2E.Mechanics;
 
 namespace Pathfinder_Shadows_in_the_White_City.Character
 {
@@ -10,16 +12,19 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
     {
         private const int ACTION_POINTS_MAX = 3;
         public bool IsFriendly;
+        public int CharacterSheetId;
         private AnimationComponent AnimationComponent;
         private PlayingAnimation CurrentAnimation;
         private EventReceiver BattleStartListner;
         private EventReceiver BattleEndListner;
+        internal CharacterSheet CharacterSheet;
 
         public Entity actor { get; set; }
         public GridPosition GridPosition { get; private set; }
 
         public override void Start()
         {
+            CharacterSheet = new CharacterSheet(CharacterSheetId);
             BattleStartListner = new EventReceiver(LevelGrid.BattleStart);
             BattleEndListner = new EventReceiver(LevelGrid.BattleEnd);
             AnimationComponent = Entity.Get<AnimationComponent>();
@@ -35,6 +40,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
                     LevelGrid.EnemyActorList.Add(this);
                 else
                     LevelGrid.FriendlyActorList.Add(this);
+                int initiative = Check.Perception(CharacterSheet.WisdomModifier, 0, 0);
+                LevelGrid.AllActorsInBattle.Add(this, initiative);
                 DebugText.Print("Battle Has Started", new Int2(200, 400));
             }
 

@@ -81,6 +81,7 @@ Hierarchy:
                     a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
                         Id: fc004b4d-02d2-4873-914c-94fb07e31942
                         IsFriendly: true
+                        CharacterSheetId*: 2
                         actor: ref!! 4fd13266-e23b-47d8-9044-5e5656d5c20d
                     205432e8c436c84d050264d01555f0c3: !AnimationComponent
                         Id: 72e246b7-3e9f-4c3e-a6ac-1a51b54c34be
@@ -118,8 +119,6 @@ Hierarchy:
                         Children: {}
                     a7d037091204ed2119b2248a771814f0: !Pathfinder_Shadows_in_the_White_City.SandboxScript,Pathfinder_Shadows_in_the_White_City
                         Id: 7b537c35-88e4-4aee-a04e-da4271dfeb0d
-                        Material: null
-                        DebugObject: ref!! 3d5ec4ed-9d0e-40a2-8d09-ebcc4f2d1bc3
                     bc5a736ea6e896d38606fed79d5f379d: !Pathfinder_Shadows_in_the_White_City.Grid.Grid,Pathfinder_Shadows_in_the_White_City
                         Id: 4a5bbb62-a2d5-4bb4-8870-c98a4a0b218d
                         Cell: ref!! d63dace9-eaed-4025-993f-65c2df6ba289
@@ -276,6 +275,7 @@ Hierarchy:
                     a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
                         Id: 38173480-e3ef-4ef8-9e0f-1f7526f355f7
                         IsFriendly*: false
+                        CharacterSheetId*: 4
                         actor: ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
                     205432e8c436c84d050264d01555f0c3: !AnimationComponent
                         Id: 25c7701a-fd1f-44e6-ae40-a2868df5d5d0
@@ -320,6 +320,7 @@ Hierarchy:
                     a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
                         Id: 31aaed56-a8b2-48e7-be13-8874568ab7c3
                         IsFriendly: true
+                        CharacterSheetId*: 1
                         actor: ref!! d3e11360-3a8e-4107-87f5-36ac79a2d25c
                     205432e8c436c84d050264d01555f0c3: !AnimationComponent
                         Id: f415718e-b829-441e-9f24-d911c0817de8
@@ -403,6 +404,7 @@ Hierarchy:
                     a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
                         Id: 923b6c67-8d89-4f2c-b308-eb46961fbb71
                         IsFriendly*: false
+                        CharacterSheetId*: 3
                         actor: ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
                     205432e8c436c84d050264d01555f0c3: !AnimationComponent
                         Id: 220abad3-6ee4-46e7-a33a-ba0ff2184b54
