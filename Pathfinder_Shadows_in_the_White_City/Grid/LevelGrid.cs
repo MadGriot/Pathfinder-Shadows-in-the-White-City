@@ -16,8 +16,9 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         /// <summary>
         /// This Dictionary has the Actor as the Key, and initative as the value.
         /// </summary>
-        public static Dictionary<Actor, int> AllActorsInBattle { get; private set; } = new Dictionary<Actor, int>();
+        public static Dictionary<Actor, int> AllActorsInBattle { get; private set; }
         public static Queue<Actor> TurnOrder {  get; set; }
+        public static float MaxTime { get; set; } = 1;
 
         /// <summary>
         /// Creates a grid given the parameters; 'x' is width 'z' is length.
@@ -30,6 +31,25 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             GridSystem = new GridSystem(x, z, cellsize, cell);
             FriendlyActorList = new List<Actor>();
             EnemyActorList = new List<Actor>();
+            AllActorsInBattle = new Dictionary<Actor, int>();
+        }
+        public static void ClearGridSystem()
+        {
+            FriendlyActorList.Clear();
+            EnemyActorList.Clear();
+            AllActorsInBattle.Clear();
+            TurnOrder.Clear();
+        }
+        /// <summary>
+        /// Completely removes the GridSystem from memory. Can be error prone!
+        /// </summary>
+        public static void DestroyGridSystem()
+        {
+            GridSystem = null;
+            EnemyActorList = null;
+            FriendlyActorList = null;
+            AllActorsInBattle = null;
+            TurnOrder = null;
         }
         /// <summary>
         /// Determines the Turn Order by Initiative. All actors will be in a Queue.
@@ -40,6 +60,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
                .OrderByDescending(x => x.Value)
                .Select(x => x.Key).ToList();
             TurnOrder = new Queue<Actor>(characters);
+            TurnOrder.First().CurrentTurn = true;
         }
     }
 }

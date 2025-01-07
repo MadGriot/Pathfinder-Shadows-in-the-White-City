@@ -11,6 +11,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
     public class Actor : SyncScript
     {
         private const int ACTION_POINTS_MAX = 3;
+        internal int ActionPoints = ACTION_POINTS_MAX;
         public bool IsFriendly;
         public int CharacterSheetId;
         private AnimationComponent AnimationComponent;
@@ -19,6 +20,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         private EventReceiver BattleEndListner;
         internal CharacterSheet CharacterSheet;
         internal int initiative;
+        internal bool CurrentTurn;
 
         public Entity actor { get; set; }
         public GridPosition GridPosition { get; private set; }
@@ -44,7 +46,12 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
                 LevelGrid.AllActorsInBattle.Add(this, initiative);
                 DebugText.Print("Battle Has Started", new Int2(200, 400));
             }
+            if (CurrentTurn)
+            {
+                ActionSystem.SelectedActor = actor.Get<Actor>();
+                DebugText.Print($"{CharacterSheet.FirstName}'s turn", new Int2(200, 600));
 
+            }
             if (BattleEndListner.TryReceive())
             {
                 DebugText.Print("Battle Has Ended", new Int2(200, 400));

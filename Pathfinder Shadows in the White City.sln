@@ -7,5 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder_Shadows_in_the_W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder_Shadows_in_the_White_City", "Pathfinder_Shadows_in_the_White_City\Pathfinder_Shadows_in_the_White_City.csproj", "{DF4E8809-DD73-47A1-9FE8-4D7CAB7F0B68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathfinderSecondEdition", "PathfinderSecondEdition\PathfinderSecondEdition.csproj", "{E8CA9BF1-B3F8-4F03-8C30-4E57911743B9}"
+EndProject
 Global
 EndGlobal

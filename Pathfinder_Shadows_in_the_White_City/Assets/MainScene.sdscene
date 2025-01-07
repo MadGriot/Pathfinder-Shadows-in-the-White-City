@@ -122,6 +122,8 @@ Hierarchy:
                     bc5a736ea6e896d38606fed79d5f379d: !Pathfinder_Shadows_in_the_White_City.Grid.Grid,Pathfinder_Shadows_in_the_White_City
                         Id: 4a5bbb62-a2d5-4bb4-8870-c98a4a0b218d
                         Cell: ref!! d63dace9-eaed-4025-993f-65c2df6ba289
+                    8048b593479ed81ca80945cd558ecf1c: !Pathfinder_Shadows_in_the_White_City.Grid.EncounterSystem,Pathfinder_Shadows_in_the_White_City
+                        Id: 82859023-13be-441f-a2d5-232827e3c3c8
         -   Entity:
                 Id: 6aa90d40-408e-475c-bd43-a6ada7d7350a
                 Name: Directional light

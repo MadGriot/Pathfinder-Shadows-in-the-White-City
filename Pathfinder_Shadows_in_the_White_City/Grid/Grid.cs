@@ -27,9 +27,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             if (BattleEndListner.TryReceive())
             {
                 RemoveAllGridPositionVisuals();
-                LevelGrid.EnemyActorList.Clear();
-                LevelGrid.FriendlyActorList.Clear();
-                LevelGrid.AllActorsInBattle.Clear();
+                LevelGrid.ClearGridSystem();
             }
 
         }
