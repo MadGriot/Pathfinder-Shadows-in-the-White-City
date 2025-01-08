@@ -47,3 +47,10 @@ Hierarchy:
                         Animations:
                             ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
                             ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+                    87219b429dea8f42b227f1b60be0e9a5: !Pathfinder_Shadows_in_the_White_City.Actions.StrideAction,Pathfinder_Shadows_in_the_White_City
+                        Id: 20b67bcc-9a7b-4d2f-992b-55b771b3ef7d
+                        Actor: ref!! fca0d709-3035-42b4-ac21-5b50e3013e9e
+                    46bbbc6c64c10e7222da53dd05ca3485: !Pathfinder_Shadows_in_the_White_City.Actions.StrikeAction,Pathfinder_Shadows_in_the_White_City
+                        Id: 369dcf96-f446-4b4a-af1f-0a78545530d0
+                        Actor: ref!! fca0d709-3035-42b4-ac21-5b50e3013e9e
+                        MaxStrikeDistance: 0

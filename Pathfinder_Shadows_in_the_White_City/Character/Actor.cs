@@ -4,7 +4,9 @@ using Pathfinder_Shadows_in_the_White_City.Grid;
 using Stride.Animations;
 using Stride.Engine.Events;
 using PathfinderSecondEdition.Mechanics;
-
+using Stride.Input;
+using SharpDX.MediaFoundation;
+using Pathfinder_Shadows_in_the_White_City.Actions;
 
 namespace Pathfinder_Shadows_in_the_White_City.Character
 {
@@ -18,7 +20,10 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         private PlayingAnimation CurrentAnimation;
         private EventReceiver BattleStartListner;
         private EventReceiver BattleEndListner;
+        private EventReceiver ActionSelectedListner;
         internal CharacterSheet CharacterSheet;
+        internal StrideAction StrideAction;
+        internal StrikeAction StrikeAction;
         internal int initiative;
         internal bool CurrentTurn;
 
@@ -29,9 +34,14 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         {
             BattleStartListner = new EventReceiver(LevelGrid.BattleStart);
             BattleEndListner = new EventReceiver(LevelGrid.BattleEnd);
+            ActionSelectedListner = new EventReceiver(ActionSystem.ActionSelected);
             AnimationComponent = Entity.Get<AnimationComponent>();
             CurrentAnimation = AnimationComponent.Play("Idle");
             CharacterSheet = new CharacterSheet(CharacterSheetId);
+            StrikeAction = Entity.Get<StrikeAction>();
+            StrideAction = Entity.Get<StrideAction>();
+            GridPosition = LevelGrid.GridSystem.GetGridPosition(actor.Transform.Position);
+            LevelGrid.GridSystem.AddActorAtGridPosition(GridPosition, this);
         }
 
         public override void Update()
@@ -46,17 +56,23 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
                 LevelGrid.AllActorsInBattle.Add(this, initiative);
                 DebugText.Print("Battle Has Started", new Int2(200, 400));
             }
-            if (CurrentTurn)
-            {
-                ActionSystem.SelectedActor = actor.Get<Actor>();
-                DebugText.Print($"{CharacterSheet.FirstName}'s turn", new Int2(200, 600));
 
-            }
             if (BattleEndListner.TryReceive())
             {
                 DebugText.Print("Battle Has Ended", new Int2(200, 400));
 
             }
+            if (!CurrentTurn) return;
+            if (IsFriendly || ActionSystem.InGameMasterMode)
+            {
+                if (!ActionSelectedListner.TryReceive())
+                    ActionSystem.ActionDecision.Broadcast();
+
+            }
+            DebugText.Print($"{CharacterSheet.FirstName}'s turn", new Int2(200, 600));
+            DebugText.Print($"Selected Actor: {ActionSystem.SelectedActor.CharacterSheet.FirstName}", new Int2(700, 200));
+
+
         }
     }
 }

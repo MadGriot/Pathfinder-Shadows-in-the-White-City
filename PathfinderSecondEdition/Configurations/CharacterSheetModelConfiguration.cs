@@ -16,6 +16,7 @@ namespace PathfinderSecondEdition.Configurations
                       LastName = "Munaye",
                       CurrentHP = 15,
                       MaxHP = 15,
+                      Speed = 30,
                   },
                   new CharacterSheetModel
                   {
@@ -25,6 +26,7 @@ namespace PathfinderSecondEdition.Configurations
                       LastName = "Oladoyinbo",
                       CurrentHP = 22,
                       MaxHP = 22,
+                      Speed = 25,
                   },
                   new CharacterSheetModel
                   {
@@ -34,6 +36,7 @@ namespace PathfinderSecondEdition.Configurations
                       LastName = "Marcellus",
                       CurrentHP = 14,
                       MaxHP = 14,
+                      Speed = 25,
 
                   },
                   new CharacterSheetModel
@@ -44,6 +47,7 @@ namespace PathfinderSecondEdition.Configurations
                       LastName = "Person",
                       CurrentHP = 0,
                       MaxHP = 0,
+                      Speed = 25,
                   }
               );
         }

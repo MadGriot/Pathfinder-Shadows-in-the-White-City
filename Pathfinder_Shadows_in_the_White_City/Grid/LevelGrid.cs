@@ -3,6 +3,8 @@ using Stride.Engine;
 using Stride.Engine.Events;
 using Pathfinder_Shadows_in_the_White_City.Character;
 using System.Linq;
+using Pathfinder_Shadows_in_the_White_City.Actions;
+using Stride.Rendering;
 
 namespace Pathfinder_Shadows_in_the_White_City.Grid
 {
@@ -13,6 +15,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         public static EventKey BattleEnd { get; private set; } = new EventKey("Battle", "End");
         public static List<Actor> FriendlyActorList { get; private set; }
         public static List<Actor> EnemyActorList { get; private set; }
+        public static List<Material> GridVisualTypeMaterials { get; private set; } = [];
         /// <summary>
         /// This Dictionary has the Actor as the Key, and initative as the value.
         /// </summary>
@@ -61,6 +64,33 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
                .Select(x => x.Key).ToList();
             TurnOrder = new Queue<Actor>(characters);
             TurnOrder.First().CurrentTurn = true;
+            ActionSystem.SelectedActor = TurnOrder.First();
+            ActionSystem.SelectedAction = ActionSystem.SelectedActor.StrideAction;
+            UpdateGridVisual();
+        }
+
+        public static void UpdateGridVisual()
+        {
+            GridSystem.HideAllGridPosition(GridVisualTypeMaterials[(int)GridVisualType.Blank]);
+            Actor selectedActor = ActionSystem.SelectedActor;
+            BaseAction selectedAction = ActionSystem.SelectedAction;
+
+            GridVisualType gridVisualType;
+            switch (selectedAction)
+            {
+                default:
+                case StrideAction:
+                    gridVisualType = GridVisualType.White;
+                    break;
+                case StrikeAction:
+                    gridVisualType = GridVisualType.Red;
+
+                    GridSystem.ShowGridPositionRange(selectedActor.GridPosition
+                        , selectedActor.StrikeAction.MaxStrikeDistance, GridVisualType.Red);
+                    break;
+            }
+            GridSystem.ShowGridPositionList(ActionSystem.SelectedAction
+                .GetValidActionGridPositionList(), gridVisualType, GridVisualTypeMaterials);
         }
     }
 }

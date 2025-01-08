@@ -1,10 +1,14 @@
 ﻿using Stride.Engine;
 using Stride.Engine.Events;
+using Stride.Rendering;
+using System.Collections.Generic;
 
 namespace Pathfinder_Shadows_in_the_White_City.Grid
 {
     public class Grid : SyncScript
     {
+
+        public List<Material> GridVisualTypeMaterials = [];
         public Entity Cell {  get; set; }
         private GridSystem GridSystem { get; set; }
         private EventReceiver BattleStartListner;
@@ -14,6 +18,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             BattleStartListner = new EventReceiver(LevelGrid.BattleStart);
             BattleEndListner = new EventReceiver(LevelGrid.BattleEnd);
             LevelGrid.CreateGridSystem(10, 10, 2f, Cell);
+            LevelGrid.GridVisualTypeMaterials.AddRange(GridVisualTypeMaterials);
             GridSystem = LevelGrid.GridSystem;
         }
 
@@ -21,7 +26,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         {
             if (BattleStartListner.TryReceive())
             {
-                LoadAllGridPositionVisuals();
+               LoadAllGridPositionVisuals();
 
             }
             if (BattleEndListner.TryReceive())

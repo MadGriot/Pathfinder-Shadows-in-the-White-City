@@ -12,7 +12,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         private EventReceiver BattleEndListner;
         private bool EncounterSetup;
         private bool InEncounter;
-
+        public bool InGameMasterMode { get; set; }
         private float timer = 0;
         private float deltaTime;
         private Vector2 index = new Vector2();
@@ -21,6 +21,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         {
             BattleStartListner = new EventReceiver(LevelGrid.BattleStart);
             BattleEndListner = new EventReceiver(LevelGrid.BattleEnd);
+            ActionSystem.InGameMasterMode = InGameMasterMode;
         }
 
         public override void Update()
@@ -46,14 +47,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             {
                 deltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
                 timer += deltaTime;
-                DebugText.Print("In Combat Press A to End Turn", new Int2(700, 300));
-                foreach (IGamePadDevice gamepad in Input.GamePads)
-                {
-                    if (gamepad.IsButtonPressed(GamePadButton.A))
-                    {
-                        ActionSystem.EndTurn();
-                    }
-                }
+
 
             }
             else

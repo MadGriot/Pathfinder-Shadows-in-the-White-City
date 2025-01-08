@@ -15,6 +15,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         public string LastName { get; set; }
         public int CurrentHP { get; set; }
         public int MaxHP { get; set; }
+        public int Speed { get; set; }
         public int Strength { get; set; }
         public int StrengthModifier { get; set; }
         public int Dexterity { get; set; }
@@ -41,6 +42,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
             LastName = character.LastName;
             CurrentHP = character.CurrentHP;
             MaxHP = character.MaxHP;
+            Speed = character.Speed;
             Strength = abilityScore.Strength;
             StrengthModifier = Modifier.AttributeModifier(Strength);
 

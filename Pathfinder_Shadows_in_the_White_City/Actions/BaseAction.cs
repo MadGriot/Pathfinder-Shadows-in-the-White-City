@@ -7,30 +7,29 @@ using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
 using Pathfinder_Shadows_in_the_White_City.Grid;
+using Stride.Engine.Events;
+using Pathfinder_Shadows_in_the_White_City.Character;
 
 namespace Pathfinder_Shadows_in_the_White_City.Actions
 {
     public abstract class BaseAction : SyncScript
     {
+        public Entity Actor { get; set; }
         protected int ActionPointCost { get; set; } = 1;
         public string Name { get; protected set; } = "Action";
+        protected EventReceiver ActionSelectedListener { get; set; }
 
         public override void Start()
         {
-            // Initialization of the script.
+            ActionSelectedListener = new EventReceiver(ActionSystem.ActionSelected);
         }
 
         public override void Update()
         {
-            // Do stuff every new frame
+            if (!ActionSelectedListener.TryReceive())
+                return;
         }
 
-        //public virtual bool IsValidActionGridPosition(GridPosition gridPosition)
-        //{
-        //    List<GridPosition> validGridPositionList = GetValidActionGridPositionList();
-        //    return validGridPositionList.Contains(gridPosition);
-        //}    
-        //public abstract void TakeAction(GridPosition gridPosition, Action onActionComplete);
-        //public abstract List<GridPosition> GetValidActionGridPositionList();
+        public abstract List<GridPosition> GetValidActionGridPositionList();
     }
 }
