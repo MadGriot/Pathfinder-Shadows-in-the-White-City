@@ -1,4 +1,6 @@
 ﻿
+using PathfinderSecondEdition.Actions;
+
 namespace PathfinderSecondEdition
 {
     public class CharacterSheetModel
@@ -10,7 +12,7 @@ namespace PathfinderSecondEdition
         public int CurrentHP { get; set; }
         public int MaxHP { get; set; }
         public int Speed { get; set; }
-
+        public List<PathfinderAction>? PathfinderActions { get; set; }
         public AbilityScore AbilityScore { get; set; }
     }
 }

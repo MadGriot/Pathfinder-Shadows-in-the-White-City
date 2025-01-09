@@ -1,5 +1,6 @@
 ﻿using Pathfinder_Shadows_in_the_White_City.Actions;
 using Pathfinder_Shadows_in_the_White_City.Grid;
+using Stride.Engine;
 using Stride.Engine.Events;
 using System.Linq;
 
@@ -17,13 +18,13 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         public static bool InSelectionMode { get; set; }
         public static void EndTurn()
         {
-            Actor currentActor = LevelGrid.TurnOrder.Dequeue();
-            currentActor.CurrentTurn = false;
+            Entity currentActor = LevelGrid.TurnOrder.Dequeue();
+            currentActor.Get<Actor>().CurrentTurn = false;
             LevelGrid.TurnOrder.Enqueue(currentActor);
-            SelectedActor = LevelGrid.TurnOrder.First();
+            SelectedActor = LevelGrid.TurnOrder.First().Get<Actor>();
             SelectedAction = SelectedActor.StrideAction;
             SelectedActor.CurrentTurn = true;
-            LevelGrid.UpdateGridVisual();
+            //LevelGrid.UpdateGridVisual();
         }
 
     }

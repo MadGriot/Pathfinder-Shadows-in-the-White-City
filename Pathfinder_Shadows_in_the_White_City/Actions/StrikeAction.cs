@@ -12,6 +12,11 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
 {
     public class StrikeAction : BaseAction
     {
+        public StrikeAction() { }
+        public StrikeAction(Entity actor) : base(actor)
+        {
+        }
+
         public int MaxStrikeDistance { get; set; }
         public override void Start()
         {

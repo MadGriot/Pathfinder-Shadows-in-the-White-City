@@ -19,6 +19,14 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
         public string Name { get; protected set; } = "Action";
         protected EventReceiver ActionSelectedListener { get; set; }
 
+        public BaseAction()
+        {
+
+        }
+        public BaseAction(Entity actor)
+        {
+            Actor = actor;
+        }
         public override void Start()
         {
             ActionSelectedListener = new EventReceiver(ActionSystem.ActionSelected);

@@ -13,6 +13,10 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
 {
     public class StrideAction : BaseAction
     {
+        public StrideAction() { }
+        public StrideAction(Entity actor) : base(actor)
+        {
+        }
 
         public override void Start()
         {

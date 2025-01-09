@@ -1,4 +1,5 @@
 ﻿using PathfinderSecondEdition;
+using PathfinderSecondEdition.Actions;
 using PathfinderSecondEdition.Mechanics;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         public int CurrentHP { get; set; }
         public int MaxHP { get; set; }
         public int Speed { get; set; }
+        public List<PathfinderAction> PathfinderActions { get; set; } = [];
         public int Strength { get; set; }
         public int StrengthModifier { get; set; }
         public int Dexterity { get; set; }
@@ -43,6 +45,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
             CurrentHP = character.CurrentHP;
             MaxHP = character.MaxHP;
             Speed = character.Speed;
+            PathfinderActions.AddRange(character.PathfinderActions);
             Strength = abilityScore.Strength;
             StrengthModifier = Modifier.AttributeModifier(Strength);
 

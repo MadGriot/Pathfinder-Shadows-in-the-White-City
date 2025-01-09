@@ -15,7 +15,7 @@ Hierarchy:
         - ref!! 22b4560a-2273-4ade-bcbe-c62c42e7dcc7
         - ref!! d3e11360-3a8e-4107-87f5-36ac79a2d25c
         - ref!! 4fd13266-e23b-47d8-9044-5e5656d5c20d
-        - ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
+        - ref!! e07d98f6-2986-419e-b3b8-66a3eb1a5a28
         - ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
         - ref!! 08eec0cd-b5db-48a8-9bfd-0d1c79b9a7bf
     Parts:
@@ -112,13 +112,6 @@ Hierarchy:
                         Animations:
                             ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
                             ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
-                    87219b429dea8f42b227f1b60be0e9a5: !Pathfinder_Shadows_in_the_White_City.Actions.StrideAction,Pathfinder_Shadows_in_the_White_City
-                        Id: c9d591b6-6d3f-4dee-8514-6a8f8b275f56
-                        Actor: ref!! 4fd13266-e23b-47d8-9044-5e5656d5c20d
-                    46bbbc6c64c10e7222da53dd05ca3485: !Pathfinder_Shadows_in_the_White_City.Actions.StrikeAction,Pathfinder_Shadows_in_the_White_City
-                        Id: d3f655fb-a4ce-487c-bfd2-1dd87e989be2
-                        Actor: ref!! 4fd13266-e23b-47d8-9044-5e5656d5c20d
-                        MaxStrikeDistance: 0
             Base:
                 BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
                 BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
@@ -313,7 +306,7 @@ Hierarchy:
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
                         Id: 38173480-e3ef-4ef8-9e0f-1f7526f355f7
-                        IsFriendly*: false
+                        IsFriendly*: true
                         CharacterSheetId*: 4
                         actor: ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
                     205432e8c436c84d050264d01555f0c3: !AnimationComponent
@@ -321,13 +314,6 @@ Hierarchy:
                         Animations:
                             ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
                             ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
-                    87219b429dea8f42b227f1b60be0e9a5: !Pathfinder_Shadows_in_the_White_City.Actions.StrideAction,Pathfinder_Shadows_in_the_White_City
-                        Id: 703f3599-d829-42ca-a36c-5bfcde403f93
-                        Actor: ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
-                    46bbbc6c64c10e7222da53dd05ca3485: !Pathfinder_Shadows_in_the_White_City.Actions.StrikeAction,Pathfinder_Shadows_in_the_White_City
-                        Id: 98ca4cc8-78db-4298-b8e4-146a7f5d241e
-                        Actor: ref!! a639d7f9-da62-46dd-bcbb-eeefdd324e24
-                        MaxStrikeDistance: 0
             Base:
                 BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
                 BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
@@ -373,13 +359,6 @@ Hierarchy:
                         Animations:
                             ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
                             ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
-                    87219b429dea8f42b227f1b60be0e9a5: !Pathfinder_Shadows_in_the_White_City.Actions.StrideAction,Pathfinder_Shadows_in_the_White_City
-                        Id: 11b09ca6-6735-4aee-b0a1-bb68290699ce
-                        Actor: ref!! d3e11360-3a8e-4107-87f5-36ac79a2d25c
-                    46bbbc6c64c10e7222da53dd05ca3485: !Pathfinder_Shadows_in_the_White_City.Actions.StrikeAction,Pathfinder_Shadows_in_the_White_City
-                        Id: b98ee5ca-fb57-4cb4-8b14-9ddc83d5ad6f
-                        Actor: ref!! d3e11360-3a8e-4107-87f5-36ac79a2d25c
-                        MaxStrikeDistance: 0
             Base:
                 BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
                 BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
@@ -398,6 +377,52 @@ Hierarchy:
                         Id: 6c69ecdf-0be6-4f8f-a11f-4dbd18d0124b
                         Model: 1949576b-051c-4940-bf8d-3ac2f024e8b4:Models/GridCell
                         Materials: {}
+        -   Entity:
+                Id: e07d98f6-2986-419e-b3b8-66a3eb1a5a28
+                Name*: EnemyActor
+                Components:
+                    eb6519567d056857b6e24f5ae89e1086: !TransformComponent
+                        Id: fa1eac95-4ec1-4f2e-81ac-6b1f5808d2eb
+                        Position*: {X: 8.0, Y: 0.0, Z: 10.0}
+                        Rotation*: {X: 0.0, Y: -1.0, Z: -0.0, W: -4.371139E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c8630be590aac2cae521ee33c39f4f25: !ModelComponent
+                        Id: 9d41c65b-d17a-4b12-8b2e-64604b4501c9
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials:
+                            2d50e704568be6a3610e97059597a5c4*~0: ea4fff51-27a0-499f-bedd-5c7842939559:MaterialTestB
+                    381cf100afeb0e94ab7289485219bc8d: !CharacterComponent
+                        Id: 7e3d872f-bac6-485a-883e-e9257fc706f7
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            20097bd3a56966742ccb34662728f3c6: !CapsuleColliderShapeDesc
+                                Length: 1.3
+                                LocalOffset: {X: 0.0, Y: 0.85, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
+                        Id: dee90fbd-dd56-4d9a-a6ce-9923eaf4d7ea
+                        IsFriendly*: true
+                        CharacterSheetId*: 3
+                        actor: ref!! e07d98f6-2986-419e-b3b8-66a3eb1a5a28
+                    205432e8c436c84d050264d01555f0c3: !AnimationComponent
+                        Id: 02d1e63f-5530-4e7c-aba5-adb14fa2466e
+                        Animations:
+                            ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+            Base:
+                BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
+                BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
+                InstanceId: 4e7cda57-0099-4931-810c-26bcc5d954c9
         -   Entity:
                 Id: ebbab640-a6a0-4001-bae1-f19a87c02bfd
                 Name: Camera
@@ -422,56 +447,3 @@ Hierarchy:
                         KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
                         MouseRotationSpeed: {X: 1.0, Y: 1.0}
                         TouchRotationSpeed: {X: 1.0, Y: 0.7}
-        -   Entity:
-                Id: fdfa385c-9cb1-47e0-ae21-379c83d5af3e
-                Name*: EnemyActor
-                Components:
-                    eb6519567d056857b6e24f5ae89e1086: !TransformComponent
-                        Id: 66e9eade-1020-4655-8d6c-9fb2ab58a2d6
-                        Position*: {X: 8.0, Y: 0.0, Z: 10.0}
-                        Rotation*: {X: 0.0, Y: 1.0, Z: 0.0, W: -4.371139E-08}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    c8630be590aac2cae521ee33c39f4f25: !ModelComponent
-                        Id: c7940e36-6cab-4481-8c7f-e37317ea764d
-                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
-                        Materials:
-                            a896236856c2a45ee5fa2904d7c8c43c*~0: ea4fff51-27a0-499f-bedd-5c7842939559:MaterialTestB
-                    381cf100afeb0e94ab7289485219bc8d: !CharacterComponent
-                        Id: 34a771e7-67a3-4285-a609-878c4723ffae
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        FallSpeed: 10.0
-                        MaxSlope: {Radians: 0.7853982}
-                        JumpSpeed: 5.0
-                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
-                        ColliderShapes:
-                            20097bd3a56966742ccb34662728f3c6: !CapsuleColliderShapeDesc
-                                Length: 1.3
-                                LocalOffset: {X: 0.0, Y: 0.85, Z: 0.0}
-                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    a0a775deded89108685489c44d179087: !Pathfinder_Shadows_in_the_White_City.Character.Actor,Pathfinder_Shadows_in_the_White_City
-                        Id: 923b6c67-8d89-4f2c-b308-eb46961fbb71
-                        IsFriendly*: false
-                        CharacterSheetId*: 3
-                        actor: ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
-                    205432e8c436c84d050264d01555f0c3: !AnimationComponent
-                        Id: 220abad3-6ee4-46e7-a33a-ba0ff2184b54
-                        Animations:
-                            ea99160391d1338d9a3c741a4952ca2f~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
-                            ed11328191693666ae966b8dcda38fd3~Run: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
-                    87219b429dea8f42b227f1b60be0e9a5: !Pathfinder_Shadows_in_the_White_City.Actions.StrideAction,Pathfinder_Shadows_in_the_White_City
-                        Id: 90614f09-c3c7-49c0-941d-4ddea3c4500e
-                        Actor: ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
-                    46bbbc6c64c10e7222da53dd05ca3485: !Pathfinder_Shadows_in_the_White_City.Actions.StrikeAction,Pathfinder_Shadows_in_the_White_City
-                        Id: 47a4c365-9420-495e-8efb-d2fbd1eca63f
-                        Actor: ref!! fdfa385c-9cb1-47e0-ae21-379c83d5af3e
-                        MaxStrikeDistance: 0
-            Base:
-                BasePartAsset: b40c141e-f9f3-4800-b72b-c88f4b25aa18:Actor
-                BasePartId: fca0d709-3035-42b4-ac21-5b50e3013e9e
-                InstanceId: 6b571041-a67c-447b-8a99-068c9376b2e2

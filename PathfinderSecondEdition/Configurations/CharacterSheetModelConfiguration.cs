@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PathfinderSecondEdition.Actions;
 
 namespace PathfinderSecondEdition.Configurations
 {
@@ -17,6 +18,8 @@ namespace PathfinderSecondEdition.Configurations
                       CurrentHP = 15,
                       MaxHP = 15,
                       Speed = 30,
+                      PathfinderActions = [PathfinderAction.Strike,
+                          PathfinderAction.Stride]
                   },
                   new CharacterSheetModel
                   {
@@ -27,6 +30,8 @@ namespace PathfinderSecondEdition.Configurations
                       CurrentHP = 22,
                       MaxHP = 22,
                       Speed = 25,
+                      PathfinderActions = [PathfinderAction.Strike,
+                          PathfinderAction.Stride]
                   },
                   new CharacterSheetModel
                   {
@@ -37,7 +42,8 @@ namespace PathfinderSecondEdition.Configurations
                       CurrentHP = 14,
                       MaxHP = 14,
                       Speed = 25,
-
+                      PathfinderActions = [PathfinderAction.Strike,
+                          PathfinderAction.Stride]
                   },
                   new CharacterSheetModel
                   {
@@ -48,6 +54,8 @@ namespace PathfinderSecondEdition.Configurations
                       CurrentHP = 0,
                       MaxHP = 0,
                       Speed = 25,
+                      PathfinderActions = [PathfinderAction.Strike,
+                          PathfinderAction.Stride]
                   }
               );
         }

@@ -131,7 +131,6 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
             Material material = null;
             foreach (GridPosition gridPosition in gridPositionList)
             {
-
                 material = materials.ElementAtOrDefault((int)gridVisualType);
                 if (material != null)
                 {

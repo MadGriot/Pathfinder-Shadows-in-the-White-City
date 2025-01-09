@@ -49,11 +49,11 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
             if (BattleStartListner.TryReceive())
             {
                 if (!IsFriendly)
-                    LevelGrid.EnemyActorList.Add(this);
+                    LevelGrid.EnemyActorList.Add(actor);
                 else
-                    LevelGrid.FriendlyActorList.Add(this);
+                    LevelGrid.FriendlyActorList.Add(actor);
                 initiative = Check.Perception(CharacterSheet.WisdomModifier, 0, 0);
-                LevelGrid.AllActorsInBattle.Add(this, initiative);
+                LevelGrid.AllActorsInBattle.Add(actor, initiative);
                 DebugText.Print("Battle Has Started", new Int2(200, 400));
             }
 

@@ -13,14 +13,14 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         public static GridSystem GridSystem { get; private set; }
         public static EventKey BattleStart { get; private set; } = new EventKey("Battle", "Start");
         public static EventKey BattleEnd { get; private set; } = new EventKey("Battle", "End");
-        public static List<Actor> FriendlyActorList { get; private set; }
-        public static List<Actor> EnemyActorList { get; private set; }
+        public static List<Entity> FriendlyActorList { get; private set; }
+        public static List<Entity> EnemyActorList { get; private set; }
         public static List<Material> GridVisualTypeMaterials { get; private set; } = [];
         /// <summary>
         /// This Dictionary has the Actor as the Key, and initative as the value.
         /// </summary>
-        public static Dictionary<Actor, int> AllActorsInBattle { get; private set; }
-        public static Queue<Actor> TurnOrder {  get; set; }
+        public static Dictionary<Entity, int> AllActorsInBattle { get; private set; }
+        public static Queue<Entity> TurnOrder {  get; set; }
         public static float MaxTime { get; set; } = 1;
 
         /// <summary>
@@ -32,9 +32,9 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         public static void CreateGridSystem(int x, int z, float cellsize, Entity cell)
         {
             GridSystem = new GridSystem(x, z, cellsize, cell);
-            FriendlyActorList = new List<Actor>();
-            EnemyActorList = new List<Actor>();
-            AllActorsInBattle = new Dictionary<Actor, int>();
+            FriendlyActorList = new List<Entity>();
+            EnemyActorList = new List<Entity>();
+            AllActorsInBattle = new Dictionary<Entity, int>();
         }
         public static void ClearGridSystem()
         {
@@ -59,14 +59,14 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
         /// </summary>
         public static void DetermineTurnOrder()
         {
-            List<Actor> characters = AllActorsInBattle
+            List<Entity> characters = AllActorsInBattle
                .OrderByDescending(x => x.Value)
                .Select(x => x.Key).ToList();
-            TurnOrder = new Queue<Actor>(characters);
-            TurnOrder.First().CurrentTurn = true;
-            ActionSystem.SelectedActor = TurnOrder.First();
+            TurnOrder = new Queue<Entity>(characters);
+            TurnOrder.First().Get<Actor>().CurrentTurn = true;
+            ActionSystem.SelectedActor = TurnOrder.First().Get<Actor>();
             ActionSystem.SelectedAction = ActionSystem.SelectedActor.StrideAction;
-            UpdateGridVisual();
+            //UpdateGridVisual();
         }
 
         public static void UpdateGridVisual()
