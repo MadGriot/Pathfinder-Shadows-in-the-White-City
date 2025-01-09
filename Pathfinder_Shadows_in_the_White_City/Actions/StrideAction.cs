@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Stride.Core.Mathematics;
-using Stride.Input;
 using Stride.Engine;
 using Pathfinder_Shadows_in_the_White_City.Character;
 using Pathfinder_Shadows_in_the_White_City.Grid;
+using Stride.Physics;
+using Stride.Engine.Events;
 
 namespace Pathfinder_Shadows_in_the_White_City.Actions
 {
     public class StrideAction : BaseAction
     {
+        private Vector3 TargetPosition;
+
+        EventReceiver<GridPosition> RecieveGridSelection = new EventReceiver<GridPosition>(ActionSystem.GridSelection);
         public StrideAction() { }
         public StrideAction(Entity actor) : base(actor)
         {
@@ -22,6 +22,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
         {
             base.Start();
             Name = "Strike";
+            TargetPosition = Actor.Transform.WorldMatrix.TranslationVector;
         }
         public override void Update()
         {
@@ -31,7 +32,31 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
             if (ActionSystem.SelectedAction.Equals(Actor.Get<StrideAction>()))
             {
                 DebugText.Print("Stride Action Selected.", new Int2(700, 300));
+                DebugText.Print($"{TargetPosition.ToString()}", new Int2(700, 400));
+                if (RecieveGridSelection.TryReceive(out GridPosition gridPosition))
+                {
+                    ActionStart();
+                    TargetPosition = LevelGrid.GridSystem.GetWorldPosition(gridPosition);
+                }
+                if (!IsActive)
+                {
+                    return;
+                }
+                float stoppingDistance = .1f;
+                if (Vector3.Distance(Actor.Transform.WorldMatrix.TranslationVector, TargetPosition) > stoppingDistance)
+                {
+                    Vector3 moveDirection = Vector3.Normalize(TargetPosition - Actor.Transform.WorldMatrix.TranslationVector);
+                    float moveSpeed = 4f;
+                    Actor.Get<CharacterComponent>().SetVelocity(moveDirection * moveSpeed);
+                }
+                else
+                {
+                    Actor.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
+                    ActionComplete();
+
+                }
             }
+
         }
 
         public override List<GridPosition> GetValidActionGridPositionList()

@@ -3,7 +3,6 @@ using Pathfinder_Shadows_in_the_White_City.Grid;
 using Stride.Engine;
 using Stride.Engine.Events;
 using System.Linq;
-using System.Collections.Generic;
 
 namespace Pathfinder_Shadows_in_the_White_City.Character
 {
@@ -16,6 +15,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         public static EventKey ActionDecision { get; private set; } = new EventKey("Action", "Decision");
 
         public static EventKey ActionSelected { get; private set; } = new EventKey("Action", "Selected");
+        public static EventKey<GridPosition> GridSelection { get; private set; } = new EventKey<GridPosition>("Action", "GridSelection");
+
         public static bool InSelectionMode { get; set; }
         public static void EndTurn()
         {

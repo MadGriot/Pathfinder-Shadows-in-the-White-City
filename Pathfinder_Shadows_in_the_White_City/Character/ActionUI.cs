@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Stride.Core.Mathematics;
+﻿using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
 using Stride.Engine.Events;
@@ -26,19 +21,31 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         {
             if (ActionSystem.InSelectionMode)
             {
-                DebugText.Print("In Combat Choose the position and press A", new Int2(700, 300));
+                DebugText.Print("In Combat Choose the position and press A", new Int2(700, 100));
                 ActionSystem.ActionSelected.Broadcast();
 
                 foreach (IGamePadDevice gamePad in Input.GamePads)
                 {
                     if (gamePad.IsButtonPressed(GamePadButton.PadLeft))
                     {
-                        GridPosition newGridPosition =  currentGridPosition + new GridPosition(1, 0);
-                        if (ActionSystem.GridNavigationValidation(newGridPosition))
-                        {
-                            currentGridPosition = newGridPosition;
-                            LevelGrid.HighlightGridPosition(currentGridPosition, GridVisualType.Blue);
-                        }
+                        NavigateGridPosition(new GridPosition(1, 0));
+                    }
+                    if (gamePad.IsButtonPressed(GamePadButton.PadRight))
+                    {
+                        NavigateGridPosition(new GridPosition(-1, 0));
+                    }
+                    if (gamePad.IsButtonPressed(GamePadButton.PadUp))
+                    {
+                        NavigateGridPosition(new GridPosition(0, 1));
+                    }
+                    if (gamePad.IsButtonPressed(GamePadButton.PadDown))
+                    {
+                        NavigateGridPosition(new GridPosition(0, -1));
+                    }
+
+                    if (gamePad.IsButtonPressed(GamePadButton.A))
+                    {
+                        ActionSystem.GridSelection.Broadcast(currentGridPosition);
                     }
                 }
             }
@@ -67,6 +74,18 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
                         ActionSystem.SelectedAction = ActionSystem.SelectedActor.Get<StrikeAction>();
                     }
                 }
+            }
+
+
+        }
+        private void NavigateGridPosition(GridPosition gridPosition)
+        {
+            GridPosition newGridPosition = currentGridPosition + gridPosition;
+            if (ActionSystem.GridNavigationValidation(newGridPosition))
+            {
+                LevelGrid.UpdateGridVisual();
+                currentGridPosition = newGridPosition;
+                LevelGrid.HighlightGridPosition(currentGridPosition, GridVisualType.Blue);
             }
         }
     }
