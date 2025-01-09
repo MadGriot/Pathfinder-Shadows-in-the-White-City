@@ -37,8 +37,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
         public override List<GridPosition> GetValidActionGridPositionList()
         {
             List<GridPosition> validGridPositionList = new List<GridPosition>();
-            int maxMoveDistance = ActionSystem.SelectedActor.CharacterSheet.Speed / 5;
-            GridPosition actorGridPosition = ActionSystem.SelectedActor.GridPosition;
+            int maxMoveDistance = ActionSystem.SelectedActor.Get<Actor>().CharacterSheet.Speed / 5;
+            GridPosition actorGridPosition = ActionSystem.SelectedActor.Get<Actor>().GridPosition;
             for (int x = -maxMoveDistance; x <= maxMoveDistance; x++)
             {
                 for (int z = -maxMoveDistance; z <= maxMoveDistance; z++)
@@ -52,7 +52,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
                         continue;
                     if (LevelGrid.GridSystem.HasAnyActorOnGridPosition(testGridPosition))
                         continue;
-                   validGridPositionList.Add(offsetGridPosition);
+                   validGridPositionList.Add(testGridPosition);
                 }
             }
             return validGridPositionList;

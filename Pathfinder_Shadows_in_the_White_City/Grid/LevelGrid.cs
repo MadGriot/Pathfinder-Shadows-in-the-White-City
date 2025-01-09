@@ -64,15 +64,23 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
                .Select(x => x.Key).ToList();
             TurnOrder = new Queue<Entity>(characters);
             TurnOrder.First().Get<Actor>().CurrentTurn = true;
-            ActionSystem.SelectedActor = TurnOrder.First().Get<Actor>();
-            ActionSystem.SelectedAction = ActionSystem.SelectedActor.StrideAction;
-            //UpdateGridVisual();
-        }
+            ActionSystem.SelectedActor = TurnOrder.First();
 
+        }
+        public static void HighlightGridPosition(GridPosition gridPosition, GridVisualType gridVisualType)
+        {
+            Material material = null;
+            material = GridVisualTypeMaterials.ElementAtOrDefault((int)gridVisualType);
+            if (material != null)
+            {
+                GridSystem.GridObjects[gridPosition.X, gridPosition.Z].Cell.Get<ModelComponent>().Materials.Remove(0);
+                GridSystem.GridObjects[gridPosition.X, gridPosition.Z].Cell.Get<ModelComponent>().Materials.Add(0, material);
+            }
+        }
         public static void UpdateGridVisual()
         {
             GridSystem.HideAllGridPosition(GridVisualTypeMaterials[(int)GridVisualType.Blank]);
-            Actor selectedActor = ActionSystem.SelectedActor;
+            Entity selectedActor = ActionSystem.SelectedActor;
             BaseAction selectedAction = ActionSystem.SelectedAction;
 
             GridVisualType gridVisualType;
@@ -85,8 +93,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
                 case StrikeAction:
                     gridVisualType = GridVisualType.Red;
 
-                    GridSystem.ShowGridPositionRange(selectedActor.GridPosition
-                        , selectedActor.StrikeAction.MaxStrikeDistance, GridVisualType.Red);
+                    GridSystem.ShowGridPositionRange(selectedActor.Get<Actor>().GridPosition
+                        , selectedActor.Get<StrikeAction>().MaxStrikeDistance, GridVisualType.Red);
                     break;
             }
             GridSystem.ShowGridPositionList(ActionSystem.SelectedAction

@@ -22,8 +22,6 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         private EventReceiver BattleEndListner;
         private EventReceiver ActionSelectedListner;
         internal CharacterSheet CharacterSheet;
-        internal StrideAction StrideAction;
-        internal StrikeAction StrikeAction;
         internal int initiative;
         internal bool CurrentTurn;
 
@@ -38,8 +36,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
             AnimationComponent = Entity.Get<AnimationComponent>();
             CurrentAnimation = AnimationComponent.Play("Idle");
             CharacterSheet = new CharacterSheet(CharacterSheetId);
-            StrikeAction = Entity.Get<StrikeAction>();
-            StrideAction = Entity.Get<StrideAction>();
+            ActionComponentToEntity.Add(CharacterSheet.PathfinderActions, actor);
             GridPosition = LevelGrid.GridSystem.GetGridPosition(actor.Transform.Position);
             LevelGrid.GridSystem.AddActorAtGridPosition(GridPosition, this);
         }
@@ -70,7 +67,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
 
             }
             DebugText.Print($"{CharacterSheet.FirstName}'s turn", new Int2(200, 600));
-            DebugText.Print($"Selected Actor: {ActionSystem.SelectedActor.CharacterSheet.FirstName}", new Int2(700, 200));
+            DebugText.Print($"Selected Actor: {ActionSystem.SelectedActor.Get<Actor>().CharacterSheet.FirstName}", new Int2(700, 200));
 
 
         }

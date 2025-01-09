@@ -98,6 +98,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
                 }
             }
         }
+
         public void ShowGridPositionRange(GridPosition gridPosition, int range, GridVisualType gridVisualType)
         {
             List<GridPosition> gridPositionList = [];
