@@ -5,12 +5,15 @@ using Pathfinder_Shadows_in_the_White_City.Character;
 using Pathfinder_Shadows_in_the_White_City.Grid;
 using Stride.Physics;
 using Stride.Engine.Events;
+using System;
 
 namespace Pathfinder_Shadows_in_the_White_City.Actions
 {
     public class StrideAction : BaseAction
     {
         private Vector3 TargetPosition;
+        private float CurrentYawOrientation;
+        private float YawOrientation = 0;
 
         EventReceiver<GridPosition> RecieveGridSelection = new EventReceiver<GridPosition>(ActionSystem.GridSelection);
         public StrideAction() { }
@@ -21,8 +24,9 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
         public override void Start()
         {
             base.Start();
-            Name = "Strike";
+            Name = "Stride";
             TargetPosition = Actor.Transform.WorldMatrix.TranslationVector;
+            CurrentYawOrientation = Actor.Transform.Rotation.YawPitchRoll.X;
         }
         public override void Update()
         {
@@ -33,6 +37,8 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
             {
                 DebugText.Print("Stride Action Selected.", new Int2(700, 300));
                 DebugText.Print($"{TargetPosition.ToString()}", new Int2(700, 400));
+                DebugText.Print($"{Actor.Transform.Rotation.ToString()}", new Int2(700, 500));
+                DebugText.Print($"{CurrentYawOrientation.ToString()}", new Int2(700, 600));
                 if (RecieveGridSelection.TryReceive(out GridPosition gridPosition))
                 {
                     ActionStart();
@@ -42,17 +48,25 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
                 {
                     return;
                 }
-                float stoppingDistance = .1f;
-                if (Vector3.Distance(Actor.Transform.WorldMatrix.TranslationVector, TargetPosition) > stoppingDistance)
+  
+                float stoppingDistance = 0.1f;
+                if (Vector3.Distance(Actor.Transform.Position, TargetPosition) > stoppingDistance)
                 {
-                    Vector3 moveDirection = Vector3.Normalize(TargetPosition - Actor.Transform.WorldMatrix.TranslationVector);
                     float moveSpeed = 4f;
+                    Vector3 moveDirection = Vector3.Normalize(TargetPosition - Actor.Transform.Position);
+                    YawOrientation = (float)Math.Atan2(-moveDirection.Z, moveDirection.X) + MathUtil.PiOverTwo;
+                    Actor.Get<CharacterComponent>().Orientation = Quaternion.RotationYawPitchRoll(YawOrientation, 0, 0);
+
+                    Actor.Transform.Rotation = Quaternion.RotationYawPitchRoll(YawOrientation, 0, 0);
                     Actor.Get<CharacterComponent>().SetVelocity(moveDirection * moveSpeed);
                 }
                 else
                 {
                     Actor.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
+                    Actor.Get<CharacterComponent>().Orientation = Quaternion.RotationYawPitchRoll(YawOrientation, 0, 0);
+                    TargetPosition = Actor.Transform.WorldMatrix.TranslationVector;
                     ActionComplete();
+
 
                 }
             }
