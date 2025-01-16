@@ -68,6 +68,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
             }
             DebugText.Print($"{CharacterSheet.FirstName}'s turn", new Int2(200, 600));
             DebugText.Print($"Selected Actor: {ActionSystem.SelectedActor.Get<Actor>().CharacterSheet.FirstName}", new Int2(700, 200));
+            DebugText.Print($"Action Points: {ActionSystem.SelectedActor.Get<Actor>().ActionPoints}", new Int2(700, 250));
 
 
         }

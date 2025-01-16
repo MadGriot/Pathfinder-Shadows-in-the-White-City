@@ -48,6 +48,14 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
         protected void ActionComplete()
         {
             IsActive = false;
+            ActionSystem.InSelectionMode = false;
+            Actor selectedActor = ActionSystem.SelectedActor.Get<Actor>();
+            selectedActor.ActionPoints -= ActionPointCost;
+            if (selectedActor.ActionPoints <= 0)
+            {
+               
+            }
+            LevelGrid.UpdateGridVisual();
         }
         public abstract List<GridPosition> GetValidActionGridPositionList();
     }

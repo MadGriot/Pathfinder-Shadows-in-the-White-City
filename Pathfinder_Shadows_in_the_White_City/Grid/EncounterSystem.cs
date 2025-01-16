@@ -48,7 +48,6 @@ namespace Pathfinder_Shadows_in_the_White_City.Grid
                 deltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
                 timer += deltaTime;
 
-
             }
             else
                 DebugText.Print("Not in Combat", new Int2(700, 300));
