@@ -11,11 +11,11 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
 {
     public class StrideAction : BaseAction
     {
-        private Vector3 TargetPosition;
+        internal Vector3 TargetPosition;
         private float CurrentYawOrientation;
         private float YawOrientation = 0;
 
-        EventReceiver<GridPosition> RecieveGridSelection = new EventReceiver<GridPosition>(ActionSystem.GridSelection);
+        EventReceiver RecieveGridSelection = new EventReceiver(ActionSystem.GridSelection);
         public StrideAction() { }
         public StrideAction(Entity actor) : base(actor)
         {
@@ -39,10 +39,9 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
                 DebugText.Print($"{TargetPosition.ToString()}", new Int2(700, 400));
                 DebugText.Print($"{Actor.Transform.Rotation.ToString()}", new Int2(700, 500));
                 DebugText.Print($"{CurrentYawOrientation.ToString()}", new Int2(700, 600));
-                if (RecieveGridSelection.TryReceive(out GridPosition gridPosition))
+                if (RecieveGridSelection.TryReceive())
                 {
                     ActionStart();
-                    TargetPosition = LevelGrid.GridSystem.GetWorldPosition(gridPosition);
                 }
                 if (!IsActive)
                 {
@@ -64,7 +63,6 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
                 {
                     Actor.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
                     Actor.Get<CharacterComponent>().Orientation = Quaternion.RotationYawPitchRoll(YawOrientation, 0, 0);
-                    TargetPosition = Actor.Transform.WorldMatrix.TranslationVector;
                     ActionComplete();
 
 

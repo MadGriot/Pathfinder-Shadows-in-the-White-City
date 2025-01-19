@@ -45,7 +45,9 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
 
                     if (gamePad.IsButtonPressed(GamePadButton.A))
                     {
-                        ActionSystem.GridSelection.Broadcast(currentGridPosition);
+                        ActionSystem.SelectedActor.Get<StrideAction>().TargetPosition = 
+                            LevelGrid.GridSystem.GetWorldPosition(currentGridPosition);
+                        ActionSystem.SelectedActor.Get<StrideAction>().ActionStart();
                     }
                 }
             }

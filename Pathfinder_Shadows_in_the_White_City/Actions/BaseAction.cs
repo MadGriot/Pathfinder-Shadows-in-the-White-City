@@ -41,7 +41,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
                 return;
         }
 
-        protected void ActionStart()
+        internal void ActionStart()
         {
             IsActive = true;
         }
@@ -53,7 +53,7 @@ namespace Pathfinder_Shadows_in_the_White_City.Actions
             selectedActor.ActionPoints -= ActionPointCost;
             if (selectedActor.ActionPoints <= 0)
             {
-               
+                ActionSystem.EndTurn();
             }
             LevelGrid.UpdateGridVisual();
         }

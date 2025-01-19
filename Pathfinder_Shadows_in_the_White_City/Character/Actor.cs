@@ -4,8 +4,6 @@ using Pathfinder_Shadows_in_the_White_City.Grid;
 using Stride.Animations;
 using Stride.Engine.Events;
 using PathfinderSecondEdition.Mechanics;
-using Stride.Input;
-using SharpDX.MediaFoundation;
 using Pathfinder_Shadows_in_the_White_City.Actions;
 
 namespace Pathfinder_Shadows_in_the_White_City.Character
@@ -66,11 +64,20 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
                     ActionSystem.ActionDecision.Broadcast();
 
             }
+            GridPosition newGridPosition = LevelGrid.GridSystem.GetGridPosition(actor.Transform.Position);
+            if (newGridPosition != GridPosition)
+            {
+                GridPosition oldGridPosition = GridPosition;
+                GridPosition = newGridPosition;
+                LevelGrid.GridSystem.MoveActorToGridPosition(oldGridPosition, newGridPosition, this);
+
+            }
             DebugText.Print($"{CharacterSheet.FirstName}'s turn", new Int2(200, 600));
             DebugText.Print($"Selected Actor: {ActionSystem.SelectedActor.Get<Actor>().CharacterSheet.FirstName}", new Int2(700, 200));
             DebugText.Print($"Action Points: {ActionSystem.SelectedActor.Get<Actor>().ActionPoints}", new Int2(700, 250));
 
 
         }
+        public void RenewActionPoints() => ActionPoints = ACTION_POINTS_MAX;
     }
 }
