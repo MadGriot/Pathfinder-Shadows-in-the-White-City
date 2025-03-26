@@ -10,7 +10,7 @@ using PathfinderSecondEdition;
 namespace PathfinderSecondEdition.Migrations
 {
     [DbContext(typeof(CharacterSheetDbContext))]
-    [Migration("20250326173255_initial")]
+    [Migration("20250326181206_initial")]
     partial class initial
     {
         /// <inheritdoc />
