@@ -30,6 +30,7 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             9782d3344620f0aa9fe3a80ebae9ac07: ref!! 89e543cd-49eb-4eec-9558-465c75314867
+                            8221fe60c51673ed1d7676ed1a8d736b: ref!! 2a1db374-24e8-4257-a6ff-d9332aa26d2c
         -   Entity:
                 Id: 22b4560a-2273-4ade-bcbe-c62c42e7dcc7
                 Name: TrainingArea
@@ -57,6 +58,12 @@ Hierarchy:
                         Children: {}
                     0c377929366b6c36b6fdab71ecca2b52: !Pathfinder_Shadows_in_the_White_City.Character.ActionUI,Pathfinder_Shadows_in_the_White_City
                         Id: 6c626641-c0be-4b95-b574-6d9a4e2684d6
+                        UIPage: ref!! 3338b225-1f4d-4c17-9e28-feab125ef2df
+                    9aa23a5aa5db43d1a7ef504a48a4428c: !UIComponent
+                        Id: 61d4892f-18c8-4c60-8baf-9fbbad0444be
+                        Page: bf22ccab-773f-4294-9e94-bf937c62dff7:UI/ActionUI
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
         -   Entity:
                 Id: 3d5ec4ed-9d0e-40a2-8d09-ebcc4f2d1bc3
                 Name: CoinWhite
@@ -318,6 +325,22 @@ Hierarchy:
                         Model: 922930df-514b-4eb5-8274-e427eecc434f:Models/Box2x1x1
                         Materials:
                             03267ef2d0ec39e43981fff9d0b74d53~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+        -   Entity:
+                Id: cd8e1da1-ce9c-4f83-8b4a-4711f73bfd0a
+                Name: SandboxUI
+                Components:
+                    1e2b9f718bb215ff67aa78faf893b55d: !TransformComponent
+                        Id: 2a1db374-24e8-4257-a6ff-d9332aa26d2c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    f26daa38c958ead1365d22cf5e234e5c: !UIComponent
+                        Id: e0cb26fd-5d39-448e-875b-0df4ce8ab84b
+                        Enabled: false
+                        Page: 5b86f682-09e6-49d3-a6d8-7e5e96736d1a:UI/GridControlUI
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
         -   Entity:
                 Id: d3e11360-3a8e-4107-87f5-36ac79a2d25c
                 Name: Actor

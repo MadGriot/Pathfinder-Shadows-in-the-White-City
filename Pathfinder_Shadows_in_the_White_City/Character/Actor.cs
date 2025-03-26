@@ -79,5 +79,10 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
 
         }
         public void RenewActionPoints() => ActionPoints = ACTION_POINTS_MAX;
+
+        public void Damage(int damageAmount)
+        {
+            CharacterSheet.CurrentHP -= damageAmount;
+        }
     }
 }

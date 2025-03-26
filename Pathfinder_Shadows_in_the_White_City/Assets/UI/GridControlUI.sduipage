@@ -1,0 +1,127 @@
+!UIPageAsset
+Id: 5b86f682-09e6-49d3-a6d8-7e5e96736d1a
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! b7da7858-a03c-443e-a5dd-3433ff11d721
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 2c6d7751-cb65-4254-82e9-ddd55ea5c3a3
+                DependencyProperties:
+                    aec9644881e512d4246336d9b46350fe~GridBase.RowPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Height: 20.0
+                VerticalAlignment: Bottom
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Row 2
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+        -   UIElement: !Grid
+                Id: 448e09c0-60d7-48b1-9927-727819487002
+                DependencyProperties:
+                    4c921c9920612c1c50079754672792e3~GridBase.RowPropertyKey: 1
+                    5912b2a9c5fcb5d7850c64554ed93ff7~GridBase.RowSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    f392781729d853f147ccb07b5d37f9f9: !TextBlock ref!! 93231fe8-bb3c-486e-b51f-fe7c540a38e0
+                    1398fdd350cd7bf531ab354853390a5f: !TextBlock ref!! a054207a-2dc1-42ac-ad5b-ff433a44fa16
+                    e4bfe883f3cd6269cb720a1d8d6e2b36: !TextBlock ref!! 7838b269-3a7a-4df4-be99-e228b68aa484
+                RowDefinitions: {}
+                ColumnDefinitions:
+                    fdb9ef1ee03cd8cc8d039a4a0d1afbe2:
+                        MaximumSize: 3.4028235E+38
+                    d54e4e3c5400c2ebd5e64a3c4b841200: {}
+                    d785807bc8f174a5dc7832a2662a6f0b: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: 7838b269-3a7a-4df4-be99-e228b68aa484
+                DependencyProperties:
+                    dcc79834f487af54209a8de3b3107b22~GridBase.ColumnPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Middle Column 2
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 93231fe8-bb3c-486e-b51f-fe7c540a38e0
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Middle Column 0
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: a054207a-2dc1-42ac-ad5b-ff433a44fa16
+                DependencyProperties:
+                    3ddf9345fb283316da8959c3e1c80044~GridBase.ColumnPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Middle Column 1
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+        -   UIElement: !Grid
+                Id: b7da7858-a03c-443e-a5dd-3433ff11d721
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    249ec1f02986fb0e90a139464592bad4: !TextBlock ref!! e8d5ab94-6b47-44bd-9aeb-1d50699ef648
+                    7a0b13d1614bb4a8e9652f26d9901079: !Grid ref!! 448e09c0-60d7-48b1-9927-727819487002
+                    3090f371278d2653a7235201363e53f3: !TextBlock ref!! 2c6d7751-cb65-4254-82e9-ddd55ea5c3a3
+                RowDefinitions:
+                    a99f689686f89b8fb37a1a3a558c8365:
+                        MaximumSize: 3.4028235E+38
+                    1f9b40f9e20c18747da18b666fbbf191: {}
+                    7fc9c482960c5ba880f03b1740079410: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: e8d5ab94-6b47-44bd-9aeb-1d50699ef648
+                DependencyProperties:
+                    76d14eac387602c81eb58b6b88f4961b~GridBase.RowPropertyKey: 0
+                    212a1cba1033a08e99a26de378ae0bb5~GridBase.ColumnPropertyKey: 0
+                    967fe55cc5c37518fc8e148fedba71d4~GridBase.ColumnSpanPropertyKey: 1
+                    b326eed41576695cccf6b0d79eceec71~GridBase.RowSpanPropertyKey: 1
+                    1691ac22f9d9a55eb8046205c9cea2fd~Panel.ZIndexPropertyKey: 0
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Height: 70.0
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Row 0
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 50.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center

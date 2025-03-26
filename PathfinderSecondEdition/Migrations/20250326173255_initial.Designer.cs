@@ -10,8 +10,8 @@ using PathfinderSecondEdition;
 namespace PathfinderSecondEdition.Migrations
 {
     [DbContext(typeof(CharacterSheetDbContext))]
-    [Migration("20250109071018_adding actions")]
-    partial class addingactions
+    [Migration("20250326173255_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -142,6 +142,7 @@ namespace PathfinderSecondEdition.Migrations
                             LastName = "Munaye",
                             Level = 1,
                             MaxHP = 15,
+                            PathfinderActions = "[1,0]",
                             Speed = 30
                         },
                         new
@@ -152,6 +153,7 @@ namespace PathfinderSecondEdition.Migrations
                             LastName = "Oladoyinbo",
                             Level = 1,
                             MaxHP = 22,
+                            PathfinderActions = "[1,0]",
                             Speed = 25
                         },
                         new
@@ -162,6 +164,7 @@ namespace PathfinderSecondEdition.Migrations
                             LastName = "Marcellus",
                             Level = 1,
                             MaxHP = 14,
+                            PathfinderActions = "[1,0]",
                             Speed = 25
                         },
                         new
@@ -172,6 +175,7 @@ namespace PathfinderSecondEdition.Migrations
                             LastName = "Person",
                             Level = 1,
                             MaxHP = 0,
+                            PathfinderActions = "[1,0]",
                             Speed = 25
                         });
                 });

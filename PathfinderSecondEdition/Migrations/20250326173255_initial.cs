@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace PathfinderSecondEdition.Migrations
 {
     /// <inheritdoc />
@@ -20,7 +22,9 @@ namespace PathfinderSecondEdition.Migrations
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
                     CurrentHP = table.Column<int>(type: "INTEGER", nullable: false),
-                    MaxHP = table.Column<int>(type: "INTEGER", nullable: false)
+                    MaxHP = table.Column<int>(type: "INTEGER", nullable: false),
+                    Speed = table.Column<int>(type: "INTEGER", nullable: false),
+                    PathfinderActions = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -50,6 +54,28 @@ namespace PathfinderSecondEdition.Migrations
                         principalTable: "CharacterSheetModels",
                         principalColumn: "CharacterSheetModelId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "CharacterSheetModels",
+                columns: new[] { "CharacterSheetModelId", "CurrentHP", "FirstName", "LastName", "Level", "MaxHP", "PathfinderActions", "Speed" },
+                values: new object[,]
+                {
+                    { 1, 15, "Konjit", "Munaye", 1, 15, "[1,0]", 30 },
+                    { 2, 22, "Kanandi", "Oladoyinbo", 1, 22, "[1,0]", 25 },
+                    { 3, 14, "Cris", "Marcellus", 1, 14, "[1,0]", 25 },
+                    { 4, 0, "Unkown", "Person", 1, 0, "[1,0]", 25 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AbilityScores",
+                columns: new[] { "AbilityScoreId", "CharacterSheetModelId", "Charisma", "Constitution", "Dexterity", "Intelligence", "Strength", "Wisdom" },
+                values: new object[,]
+                {
+                    { 1, 1, 10, 10, 10, 10, 10, 10 },
+                    { 2, 2, 10, 10, 10, 10, 10, 10 },
+                    { 3, 3, 10, 10, 10, 10, 10, 10 },
+                    { 4, 4, 10, 10, 10, 10, 10, 10 }
                 });
 
             migrationBuilder.CreateIndex(

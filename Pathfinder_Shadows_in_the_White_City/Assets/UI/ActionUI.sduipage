@@ -1,0 +1,235 @@
+!UIPageAsset
+Id: bf22ccab-773f-4294-9e94-bf937c62dff7
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 9e9d97a8-a61b-492a-b256-6b18e0620cf1
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 4a57bc1d-e760-45e4-a5df-5c779f3cd83d
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 400.0
+                Height: 100.0
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Round #'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 40.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 758d3fa0-39e4-41fd-a5d4-2d4993cd27e4
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 150.0
+                Height: 50.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Party Member 1
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 82c4defa-0afc-482b-9869-6a1ab059372a
+                DependencyProperties:
+                    2f6d30b7e2b9f3f639ad504fab0adb32~GridBase.RowPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 150.0
+                Height: 50.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Party Member 2
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !TextBlock
+                Id: 86019d1e-4939-429c-89a8-bc7d88c2d7f2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: Stride
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !Button
+                Id: 9bc3dd7d-d298-468d-a2c5-c28d9017e039
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 150.0
+                Height: 100.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: StrideButton
+                Content: !TextBlock ref!! 86019d1e-4939-429c-89a8-bc7d88c2d7f2
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Grid
+                Id: 9e9d97a8-a61b-492a-b256-6b18e0620cf1
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: MainGrid
+                Children:
+                    f5fd77cb2d2c7b155914bb3aae1cfc13: !Grid ref!! a4af13bc-6862-4cd8-b926-fcdfaecbc662
+                    9bf21160d9974afe8a3006712732c704: !Grid ref!! cf5deeaa-299f-4f93-a641-d44027c041a3
+                    71803850359c5149a1d56551e02e68ff: !Grid ref!! b6668606-50f5-4752-a5f9-77ddb0b33d66
+                RowDefinitions: {}
+                ColumnDefinitions:
+                    92f4b8ce0ac1d8290886f5fabeab90a9:
+                        MaximumSize: 3.4028235E+38
+                    2af6b184e81508fb51bc731cfea1fd1d:
+                        MaximumSize: 3.4028235E+38
+                    f9e903b06fa094c65aeb1457f42d768b:
+                        MaximumSize: 3.4028235E+38
+                    6845d2a71bb78bf95a4ad68cf7966175: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: 9f3da995-1d4d-473b-9d03-e9fa3ed3ce73
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: Strike
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !Button
+                Id: a3576176-1137-4921-95b1-0d4e4f1e51d7
+                DependencyProperties:
+                    d74d91fbfd8a65e377d9c18592f35714~GridBase.RowPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 150.0
+                Height: 100.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: StrikeButton
+                Content: !TextBlock ref!! 9f3da995-1d4d-473b-9d03-e9fa3ed3ce73
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Grid
+                Id: a4af13bc-6862-4cd8-b926-fcdfaecbc662
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: PartyGrid
+                Children:
+                    8931f18aa94436c8a188a3d54889e493: !TextBlock ref!! 758d3fa0-39e4-41fd-a5d4-2d4993cd27e4
+                    f5d31370f21459f13e2f0e7f6d7f77df: !TextBlock ref!! 82c4defa-0afc-482b-9869-6a1ab059372a
+                    f6d5b83aca2b7121d8eda7d2f6c4643f: !TextBlock ref!! f05c052f-6b60-4614-bac7-3427c98b995c
+                    384c9d1b5bda1baffb7dddeacecb9c81: !TextBlock ref!! b2f073fb-1e26-41f1-a334-d1b5979e02fc
+                RowDefinitions:
+                    23bd5833914907e3bb0fc2144c6e7c32: {}
+                    e8b92b683cd5a891f7ba6a6048a0617a: {}
+                    2be9adada44f7c93fc2f1e5682a11b10: {}
+                    65e17084874fda29fa924e0f293db5fb: {}
+                    982b2952b47fa14748a16338af1b9ad2: {}
+                    17582f64e290391a32028803281609c0: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: b2f073fb-1e26-41f1-a334-d1b5979e02fc
+                DependencyProperties:
+                    e3974b13f62985b391a6dfca858fde1c~GridBase.RowPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 150.0
+                Height: 50.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Party Member 4
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !Grid
+                Id: b6668606-50f5-4752-a5f9-77ddb0b33d66
+                DependencyProperties:
+                    2d486c5588d19cf7d78c7128370a7df1~GridBase.ColumnPropertyKey: 4
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: RightGrid
+                Children:
+                    a60ff104b9d97d6754e3b8e478f84b53: !Button ref!! 9bc3dd7d-d298-468d-a2c5-c28d9017e039
+                    b2683a0ab3c67c7bd6a0723b27bb51d2: !Button ref!! a3576176-1137-4921-95b1-0d4e4f1e51d7
+                RowDefinitions:
+                    ad70ee3f3f73577ac0ae43e15114ffc1: {}
+                    441265e2a568becfbcff9e497b846642: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !Grid
+                Id: cf5deeaa-299f-4f93-a641-d44027c041a3
+                DependencyProperties:
+                    4099f7c29ee0c0ce178b42ae32272eb1~GridBase.ColumnPropertyKey: 1
+                    e18bbf3d80537693da022425b0fe9bd2~GridBase.ColumnSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CenterGrid
+                Children:
+                    d1d1695410ea5e39ae69a357b6d3b4f8: !TextBlock ref!! 4a57bc1d-e760-45e4-a5df-5c779f3cd83d
+                RowDefinitions:
+                    6ee6c2807f52c35dda9d32e69592b74b: {}
+                    f37acf2b21b739d6ac2ac880a971e28e: {}
+                    68323e9b84f6a13f85b52472b1d4bb7e: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: f05c052f-6b60-4614-bac7-3427c98b995c
+                DependencyProperties:
+                    d4ee25f2a17abf7da58bdf82ff68303a~GridBase.RowPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 150.0
+                Height: 50.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Party Member 3
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
