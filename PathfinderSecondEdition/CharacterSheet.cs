@@ -1,15 +1,9 @@
-﻿using PathfinderSecondEdition;
-using PathfinderSecondEdition.Actions;
+﻿using PathfinderSecondEdition.Actions;
 using PathfinderSecondEdition.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Pathfinder_Shadows_in_the_White_City.Character
+namespace PathfinderSecondEdition
 {
-    internal class CharacterSheet
+    public class CharacterSheet
     {
         private int CharacterId;
         public string FirstName { get; set; }
@@ -31,6 +25,11 @@ namespace Pathfinder_Shadows_in_the_White_City.Character
         public int WisdomModifier { get; set; }
         public int Charisma { get; set; }
         public int CharismaModifier { get; set; }
+
+        public CharacterSheet()
+        {
+
+        }
 
         public CharacterSheet(int characterId)
         {

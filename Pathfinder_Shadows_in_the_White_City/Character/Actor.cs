@@ -5,6 +5,7 @@ using Stride.Animations;
 using Stride.Engine.Events;
 using PathfinderSecondEdition.Mechanics;
 using Pathfinder_Shadows_in_the_White_City.Actions;
+using PathfinderSecondEdition;
 
 namespace Pathfinder_Shadows_in_the_White_City.Character
 {
