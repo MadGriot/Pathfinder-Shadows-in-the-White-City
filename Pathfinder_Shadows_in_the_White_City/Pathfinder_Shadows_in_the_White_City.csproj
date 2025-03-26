@@ -15,13 +15,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.ML" Version="4.0.0" />
-    <PackageReference Include="Stride.Engine" Version="4.2.0.2293" />
-    <PackageReference Include="Stride.Video" Version="4.2.0.2293" />
-    <PackageReference Include="Stride.Physics" Version="4.2.0.2293" />
-    <PackageReference Include="Stride.Navigation" Version="4.2.0.2293" />
-    <PackageReference Include="Stride.Particles" Version="4.2.0.2293" />
-    <PackageReference Include="Stride.UI" Version="4.2.0.2293" />
-    <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.2.0.2293" IncludeAssets="build;buildTransitive" />
+    <PackageReference Include="Stride.Engine" Version="4.2.0.2381" />
+    <PackageReference Include="Stride.Video" Version="4.2.0.2381" />
+    <PackageReference Include="Stride.Physics" Version="4.2.0.2381" />
+    <PackageReference Include="Stride.Navigation" Version="4.2.0.2381" />
+    <PackageReference Include="Stride.Particles" Version="4.2.0.2381" />
+    <PackageReference Include="Stride.UI" Version="4.2.0.2381" />
+    <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.2.0.2381" IncludeAssets="build;buildTransitive" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PathfinderSecondEdition\PathfinderSecondEdition.csproj" />
