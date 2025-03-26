@@ -47,5 +47,15 @@ namespace PathfinderSecondEditionTest
 
             Assert.Equal(PathfinderAction.Stride, characterSheet.PathfinderActions.First());
         }
+
+        [Fact]
+        public void TestAbilityScore()
+        {
+            CharacterSheet characterSheet = new CharacterSheetBuilder()
+                 .AddAbilityScore(10, 10, 10, 10, 10, 10)
+                 .Build();
+
+            Assert.Equal(10, characterSheet.Constitution);
+        }
     }
 }

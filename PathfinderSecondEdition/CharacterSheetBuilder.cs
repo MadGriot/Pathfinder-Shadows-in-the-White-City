@@ -1,5 +1,6 @@
 ﻿
 using PathfinderSecondEdition.Actions;
+using PathfinderSecondEdition.Mechanics;
 
 namespace PathfinderSecondEdition
 {
@@ -32,6 +33,29 @@ namespace PathfinderSecondEdition
         {
             characterSheet.PathfinderActions.AddRange(actions);
             return this;
+        }
+        public CharacterSheetBuilder AddAbilityScore(int strength,
+            int dexterity,
+            int constitution,
+            int intelligence,
+            int wisdom,
+            int charisma)
+        {
+            characterSheet.Strength = strength;
+            characterSheet.StrengthModifier = Modifier.AttributeModifier(strength);
+            characterSheet.Dexterity = dexterity;
+            characterSheet.DexterityModifier = Modifier.AttributeModifier(dexterity);
+            characterSheet.Constitution = constitution;
+            characterSheet.ConstitutionModifier = Modifier.AttributeModifier(constitution);
+            characterSheet.Intelligence = intelligence;
+            characterSheet.IntelligenceModifier = Modifier.AttributeModifier(intelligence);
+            characterSheet.Wisdom = wisdom;
+            characterSheet.WisdomModifier = Modifier.AttributeModifier(wisdom);
+            characterSheet.Charisma = charisma;
+            characterSheet.CharismaModifier = Modifier.AttributeModifier(charisma);
+
+            return this;
+
         }
         public CharacterSheet Build()
         {

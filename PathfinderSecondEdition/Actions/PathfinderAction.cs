@@ -9,6 +9,7 @@ namespace PathfinderSecondEdition.Actions
     public enum PathfinderAction
     {
         Stride,
-        Strike
+        Strike,
+        Step
     }
 }

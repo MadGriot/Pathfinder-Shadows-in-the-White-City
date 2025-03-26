@@ -31,7 +31,8 @@ namespace PathfinderSecondEdition.Configurations
                       MaxHP = 22,
                       Speed = 25,
                       PathfinderActions = [PathfinderAction.Strike,
-                          PathfinderAction.Stride]
+                          PathfinderAction.Stride,
+                       PathfinderAction.Step]
                   },
                   new CharacterSheetModel
                   {
@@ -43,7 +44,8 @@ namespace PathfinderSecondEdition.Configurations
                       MaxHP = 14,
                       Speed = 25,
                       PathfinderActions = [PathfinderAction.Strike,
-                          PathfinderAction.Stride]
+                          PathfinderAction.Stride,
+                       PathfinderAction.Step]
                   },
                   new CharacterSheetModel
                   {
@@ -55,7 +57,8 @@ namespace PathfinderSecondEdition.Configurations
                       MaxHP = 0,
                       Speed = 25,
                       PathfinderActions = [PathfinderAction.Strike,
-                          PathfinderAction.Stride]
+                          PathfinderAction.Stride,
+                            PathfinderAction.Step]
                   }
               );
         }
