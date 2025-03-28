@@ -9,6 +9,7 @@ Meta:
 AssetFolders:
     -   Path: !dir Assets
     -   Path: !dir Effects
+    -   Path: !dir C:/Users/Insan/OneDrive/Documents/Stride Projects/Pathfinder Shadows in the White City/Pathfinder_Shadows_in_the_White_City/Assets
 ResourceFolders:
     - !dir Resources
 OutputGroupDirectories: {}
